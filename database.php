@@ -4,13 +4,13 @@ $host = "localhost";
 $dbname = "login_db";
 $username = "root";
 $password = "";
-$port = "3306"; 
+// $port = "3306"; 
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,
                      password: $password,
-                     database: $dbname,
-                     port: $port);
+                     database: $dbname);
+                    //  port: $port);
                      
 
 if ($mysqli -> connect_errno) {
