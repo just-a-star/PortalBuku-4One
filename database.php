@@ -1,16 +1,16 @@
 <?php
 
 $host = "localhost";
-$dbname = "login_db";
+$dbname = "portal_buku";
 $username = "root";
 $password = "";
-$port = "3307"; 
+
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,
                      password: $password,
-                     database: $dbname,
-                     port: $port);
+                     database: $dbname
+                    );
                      
 
 if ($mysqli -> connect_errno) {

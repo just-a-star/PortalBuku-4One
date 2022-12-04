@@ -11,13 +11,13 @@
     />
     <!-- Automatic validation -->
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="/js/validation.js" defer></script>
+    <!-- <script src="js/validation.js" defer></script> -->
   </head>
   <body>
     <h2>Nyobasss</h2>
     <h1>Sign up</h1>
     <form
-      action="/proses-signup.php"
+      action="proses-signup.php"
       method="post" id="sign-up"
     >
       <div>
@@ -33,8 +33,8 @@
         <input type="password" id="password" name="password" />
       </div>
       <div>
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" />
+        <label for="password_confirmation">Confirm Password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" />
       </div>
       <div>
         <button type="submit">Sign up</button>
