@@ -4,7 +4,7 @@ $password = "your_pass";
 $database = "your_db";
 
 $host = "localhost";
-$dbname = "fourone";
+$dbname = "login_db";
 $username = "root";
 $password = "";
 $port = "3307"; 

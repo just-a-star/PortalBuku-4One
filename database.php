@@ -2,9 +2,9 @@
 
 $host = "localhost";
 $dbname = "login_db";
-$username = "SJKUSER";
+$username = "root";
 $password = "";
-$port = "3306"; 
+$port = "3307"; 
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,

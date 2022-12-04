@@ -1,4 +1,4 @@
-const validation = new JustValidate("#signup");
+const validation = new JustValidate("#sign-up");
 
 validation
     .addField("#name", [
