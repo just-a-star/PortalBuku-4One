@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 session_start();
 
@@ -7,8 +7,12 @@ if (isset($_SESSION["user_id"])) {
 
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
-  
-  $result = $mysqli->query($sql); $user = $result->fetch_assoc(); } ?> -->
+
+  $result = $mysqli->query($sql);
+  $user = $result->fetch_assoc();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +23,7 @@ if (isset($_SESSION["user_id"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
   <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styleLP.css" />
+  <link rel="stylesheet" href="styleEP.css" />
 </head>
 
 <body>
@@ -46,7 +50,9 @@ if (isset($_SESSION["user_id"])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo, Sausan</a>
+                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
+                  <?php echo $_SESSION["nama_depan"] ?>
+                </a>
               </li>
             </ul>
           </div>
@@ -96,15 +102,8 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='login.php'" type="button"
-              class="btn btn-primary btn-blok">Login</button>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="d-grid ms-auto">
-            <button onclick="document.location='sign-up.html'" class="btn btn-outline-primary btn-blok">
-              Sign Up
-            </button>
+            <button onclick="document.location='logout.php'" type="button"
+              class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
       </div>
@@ -112,174 +111,78 @@ if (isset($_SESSION["user_id"])) {
   </div>
   <!-- Navbar End -->
 
-
-  <br />
-
-  <div class="container text-center">
+  <div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+      <a class="nav-link active ms-0" id="pageeditprofil" href="" target="__blank">Profil</a>
+      <a class="nav-link" href="" target="__blank">Pembayaran</a>
+      <a class="nav-link" href="" target="__blank">Keamanan</a>
+      <a class="nav-link" href="" target="__blank">Notifikasi</a>
+    </nav>
+    <hr class="mt-0 mb-4">
     <div class="row">
-      <div class="col"></div>
-      <div class="col-6">
-        <br />
-        <h3>Temukan buku yang kamu cari</h3>
-        <p style="text-align: left">
-          Hai hai teman-teman! suka baca buku? atau sedang mencari referensi
-          materi? kami dari Portal Buku.id menyediakan berbagai jenis buku
-          yang bisa teman-teman sewa untuk waktu yang telah ditentukan dengan
-          harga sesuai kantong mahasiswa.
-        </p>
-        <img src="gambar/buku.jpg" alt="" style="width: 100%" />
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br />
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-3">
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">Sewa</button>
+      <div class="col-xl-4">
+        <!-- Profile picture card-->
+        <div class="card mb-4 mb-xl-0">
+          <div class="card-header">Foto Profil</div>
+          <div class="card-body text-center">
+            <!-- Profile picture image-->
+            <img class="img-account-profile rounded-circle mb-2" src="gambar/person-circle.svg" alt="">
+          </div>
         </div>
       </div>
-      <div class="col-3">
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-primary">
-            Terima Buku
-          </button>
-        </div>
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <br />
-  <br />
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-6">
-        <h5>Mempunyai buku lebih? Donasikan!</h5>
-        <p>
-          Donasi buku akan menjadi hak milik kami dan akan kami sewakan atau
-          berikan kepada mahasiswa yang membutuhkan buku tersebut
-        </p>
-        <br />
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">
-            Klik disini untuk Donasi Buku
-          </button>
-        </div>
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br /><br /><br /><br />
-
-  <!-- Keunggulan -->
-  <!-- <div class="container"> -->
-  <!-- <div class="row">
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-        </div> -->
-
-  <div class="container overflow-hidden">
-    <div class="row gx-5">
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/shield-fill-check.svg" alt="icon-shield" /> Aman
-            Terpecaya
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/clock-fill.svg" alt="icon-jam" /> Tepat Waktu
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/headset.svg" alt="icon-headset" /> Customer
-            Service
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
+      <div class="col-xl-8">
+        <!-- Account details card-->
+        <div class="card mb-4">
+          <div class="card-header">Detail Akun</div>
+          <div class="card-body">
+            <form>
+              <!-- Form Row-->
+              <div class="row gx-3 mb-3">
+                <!-- Form Group (first name)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="nama_depan">Nama Depan</label>
+                  <input class="form-control" id="nama_depan" name="nama_depan" type="text"
+                    value="<?php echo $_SESSION["nama_depan"] ?>" disabled>
+                </div>
+                <!-- Form Group (last name)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="nama_belakang">Nama Belakang</label>
+                  <input class="form-control" id="nama_belakang" name="nama_belakang" type="text"
+                    value="<?php echo $_SESSION["nama_belakang"] ?>" disabled>
+                </div>
+              </div>
+              <!-- Form Group (No Telp)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
+                <input class="form-control" id="no_telepon" name="no_telepon" type="tel"
+                  value="<?php echo $_SESSION["no_telepon"] ?>" disabled>
+              </div>
+              <!-- Form Group (Email)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="email">Email</label>
+                <input class="form-control" id="email" name="email" type="email"
+                  value="<?php echo $_SESSION["email"] ?>" disabled>
+              </div>
+              <!-- Form Group (username)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="alamat">Alamat</label>
+                <input class="form-control" id="alamat" name="alamat" type="text"
+                  value="<?php echo $_SESSION["alamat"] ?>" disabled>
+              </div>
+              <!-- Save changes button-->
+              <br>
+              <button class="btn btn-primary" type="button" onclick="document.location='edit-profil.php'">Ubah
+                Profil</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
 
-  <br /><br />
 
-  <!-- Sponsor -->
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <h6>Sponsor</h6>
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="gambar/DPK.png" alt="" style="width: 8%" />
-        <img src="gambar/LOGO_INDOMIE.png" alt="" style="width: 8%" />
-        <img src="gambar/logo-bsi.png" alt="" style="width: 8%" />
-      </div>
-    </div>
-  </div>
-  <br />
 
-  <hr class="h" />
-
-  <div class="container">
-    <h6>Sejarah Portal Buku.id</h6>
-    <p>
-      Portal buku adalah website dimana kalian bisa mendonasikan, menyewa dan
-      meminta buku untuk para pelajar. Potal Buku.id terinspirasi dari
-      kurangnya inisiatif pelajar untuk mencari atau membaca buku ke
-      perpustakaan dan banyaknya pelajar yang membutuhkan buku tetapi tidak
-      mempunyai cukup uang untuk membeli ataupun menyewa buku. Portal buku
-      merupakan website yang tujuannya yaitu seseorang bisa mendonasikan
-      buku-buku yang tidak dibutuhkan untuk orang-orang yang membutuhkan,
-      memudahkan pelajar dalam mencari dan menyewa buku yang dibutuhkan.
-    </p>
-  </div>
 
   <br /><br /><br />
 

@@ -23,8 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_regenerate_id();
             
             $_SESSION["user_id"] = $user["id"];
+            $_SESSION["nama_depan"] = $user["nama_depan"];
+            $_SESSION["nama_belakang"] = $user["nama_belakang"];
+            $_SESSION["no_telepon"] = $user["no_telepon"];
+            $_SESSION["email"] = $user["email"];
+            $_SESSION["alamat"] = $user["alamat"];
+            $_SESSION["password"] = $user["password"];
             
-            header("Location: index.php");
+            header("Location: after-login.php");
             exit;
         }
     }
@@ -39,18 +45,63 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="styleLP.css" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
 </head>
 
 <body>
 
-  <h1>Login</h1>
+  <!-- Header -->
+  <section class="header sticky-top">
+    <nav class="navbar">
+      <div class="container">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <br>
+
+  <section class="container">
+    <div class="col">
+      <!-- Account details card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h4>Sign In</h4>
+        </div>
+        <div class="card-body">
+          <form method="post">
+            <!-- Form Group (Email)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="email">Email</label>
+              <input class="form-control" id="email" name="email" type="email" placeholder="Masukkan email" value="">
+            </div>
+            <!-- Form Group (Password)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="password">Password</label>
+              <input class="form-control" id="password" name="password" type="password" placeholder="Masukkan password"
+                value="">
+              <input type="checkbox" onclick="passFunction()">Tampilkan Password
+            </div>
+            <!-- Save changes button-->
+            <br>
+            <button class="btn btn-primary" type="submit">Log In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <h1>Login</h1> -->
 
   <?php if ($is_invalid): ?>
   <em>Invalid login</em>
   <?php endif; ?>
 
-  <form method="post">
+  <!-- <form method="post">
     <label for="email">email</label>
     <input type="email" name="email" id="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
 
@@ -58,8 +109,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="password" name="password" id="password">
 
     <button>Log in</button>
-  </form>
-
+  </form> -->
+  <script>
+    function passFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
 </body>
 
 </html>

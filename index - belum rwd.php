@@ -23,40 +23,28 @@ if (isset($_SESSION["user_id"])) {
 </head>
 
 <body>
+  <div class="container">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Download aplikasi</a>
+      </li>
+      <li class="nav-item ms-auto mb-2 mb-lg-0">
+        <a class="nav-link" href="#">Butuh bantuan?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mitra Portal Buku</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tentang Portal Buku</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <img src="gambar/person-circle.svg" alt="icon-user" /></a>
+      </li>
+    </ul>
+  </div>
 
-  <!-- Topbar -->
-  <section class="topbar">
-    <div class="container">
-      <nav class="navbar navbar-expand-sm">
-        <div class="container-fluid">
-          <a class="nav-link" href="#">Download aplikasi</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleTopbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleTopbar">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Butuh bantuan?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Mitra Portal Buku</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about us.html">Tentang Portal Buku</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Header -->
-  <section class="header sticky-top">
+  <section class="header">
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
@@ -66,53 +54,62 @@ if (isset($_SESSION["user_id"])) {
     </nav>
   </section>
 
-  <!-- Navbar Start -->
-  <div class="container">
-    <nav class="navbar navbar-expand-lg wow fadeIn" data-wow-delay="0.1s">
-      <a href="#" class="navbar ms-3 d-lg-none text-dark">MENU</a>
-      <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav me-auto">
-          <form class="d-flex me-5" role="search">
-            <div class="input-group ">
-              <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="gambar/search.svg" alt="icon-search" />
-              </button>
-            </div>
-          </form>
-          <div class="nav-item dropdown me-5">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Kategori</a>
-            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
-              <a href="feature.html" class="dropdown-item">Features</a>
-              <a href="team.html" class="dropdown-item">Our Team</a>
-              <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-              <a href="404.html" class="dropdown-item">404 Page</a>
-            </div>
-          </div>
-          <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
-        </div>
-        <div class="col-2">
-          <div class="d-grid ms-auto">
-            <button onclick="document.location='login.php'" type="button"
-              class="btn btn-primary btn-blok">Login</button>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="d-grid ms-auto">
-            <button onclick="document.location='sign-up.html'" class="btn btn-outline-primary btn-blok">
-              Sign Up
+  <br />
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-4">
+        <form class="d-flex" role="search">
+          <img src="gambar/list.svg" alt="icon-list" />
+          <!-- <input class="form-control me-2" type="search" placeholder="Buku apa yang mau anda cari" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit"><img src="gambar/search.svg" alt="icon-search"></button> -->
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buku apa yang mau anda cari"
+              aria-label="Recipient's username" aria-describedby="button-addon2" />
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+              <img src="gambar/search.svg" alt="icon-search" />
             </button>
           </div>
+        </form>
+      </div>
+      <div class="col-2">
+        <!-- <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Kategori
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div> -->
+        <div class="col-12">
+          <select class="form-select" id="inlineFormSelectPref">
+            Kategori
+            <option selected>Kategori..</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
         </div>
       </div>
-    </nav>
+      <div class="col-2">
+        <a class="nav-link" href="#">Menjadi Donatur</a>
+      </div>
+      <div class="col-2">
+        <div class="d-grid">
+          <button onclick="document.location='login.php'" type="button" class="btn btn-primary">Login</button>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="d-grid">
+          <button onclick="document.location='sign-up.html'" class="btn btn-outline-primary">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- Navbar End -->
-
-
   <br />
 
   <div class="container text-center">
@@ -406,18 +403,6 @@ if (isset($_SESSION["user_id"])) {
       </div>
     </div>
   </section>
-
-
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-
 </body>
 
 </html>
