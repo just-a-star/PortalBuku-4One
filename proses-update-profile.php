@@ -1,15 +1,29 @@
 <?php
-
+// Mohon dibuatkan notifikasi setelah berhasil update profile
 session_start();
 
-if (isset($_SESSION["user_id"])) {
+if (isset($_POST["submit"])) {
+  $nama_depan = $_POST["nama_depan"];
+  $nama_belakang = $_POST["nama_belakang"];
+  $no_telepon = $_POST["no_telepon"];
+  $email = $_POST["email"];
+  $alamat = $_POST["alamat"];
+  $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+  
   $mysqli = require __DIR__ . "/database.php";
 
-  $sql = "SELECT * FROM user
-          WHERE id = {$_SESSION["user_id"]}";
+  $sql = "UPDATE `user` SET
+`nama_depan`='$nama_depan',`nama_belakang`='$nama_belakang',`no_telepon`='$no_telepon',`email`='$email',`alamat`='$email',`password_hash`='$password_hash'
+WHERE id= {$_SESSION["user_id"]}";
 
   $result = $mysqli->query($sql);
-  $user = $result->fetch_assoc();
+  // $user = $result->fetch_assoc();
+
+  if($result){
+    header("Location: profil.php?msg=Berhasil update profile");
+  } else {
+    echo "Gagal" . mysqli_error($mysqli);
+  }
 }
 
 ?>
@@ -27,6 +41,16 @@ if (isset($_SESSION["user_id"])) {
 </head>
 
 <body>
+  <?php
+  $id = $_SESSION["user_id"];
+  $mysqli = require __DIR__ . "/database.php";
+
+  $sql = "SELECT * FROM user
+          WHERE id = $id LIMIT 1";
+
+  $result = $mysqli->query($sql);
+  $user = $result->fetch_assoc();
+  ?>
 
   <!-- Topbar -->
   <section class="topbar">
@@ -51,7 +75,7 @@ if (isset($_SESSION["user_id"])) {
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
-                  <?php echo $user["nama_depan"] ?>
+                  <?php echo $_SESSION["nama_depan"] ?>
                 </a>
               </li>
             </ul>
@@ -66,7 +90,7 @@ if (isset($_SESSION["user_id"])) {
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='after-login.php'">Portal Buku.id</span>
         </div>
       </div>
     </nav>
@@ -136,44 +160,51 @@ if (isset($_SESSION["user_id"])) {
         <div class="card mb-4">
           <div class="card-header">Detail Akun</div>
           <div class="card-body">
-            <form>
+            <form action="" method="post">
               <!-- Form Row-->
               <div class="row gx-3 mb-3">
                 <!-- Form Group (first name)-->
                 <div class="col-md-6">
                   <label class="small mb-1" for="nama_depan">Nama Depan</label>
                   <input class="form-control" id="nama_depan" name="nama_depan" type="text"
-                    value="<?php echo $user["nama_depan"] ?>" disabled>
+                    value="<?php echo $_SESSION["nama_depan"] ?>">
                 </div>
                 <!-- Form Group (last name)-->
                 <div class="col-md-6">
                   <label class="small mb-1" for="nama_belakang">Nama Belakang</label>
                   <input class="form-control" id="nama_belakang" name="nama_belakang" type="text"
-                    value="<?php echo $user["nama_belakang"] ?>" disabled>
+                    value="<?php echo $_SESSION["nama_belakang"] ?>">
                 </div>
               </div>
               <!-- Form Group (No Telp)-->
               <div class="mb-3">
                 <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
                 <input class="form-control" id="no_telepon" name="no_telepon" type="tel"
-                  value="<?php echo $user["no_telepon"] ?>" disabled>
+                  value="<?php echo $_SESSION["no_telepon"] ?>">
               </div>
               <!-- Form Group (Email)-->
               <div class="mb-3">
                 <label class="small mb-1" for="email">Email</label>
-                <input class="form-control" id="email" name="email" type="email" value="<?php echo $user["email"] ?>"
-                  disabled>
+                <input class="form-control" id="email" name="email" type="email"
+                  value="<?php echo $_SESSION["email"] ?>">
               </div>
               <!-- Form Group (username)-->
               <div class="mb-3">
                 <label class="small mb-1" for="alamat">Alamat</label>
-                <input class="form-control" id="alamat" name="alamat" type="text" value="<?php echo $user["alamat"] ?>"
-                  disabled>
+                <input class="form-control" id="alamat" name="alamat" type="text"
+                  value="<?php echo $_SESSION["alamat"] ?>">
+              </div>
+              <!-- Form Group (Password)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="password">Password</label>
+                <input class="form-control" id="password" name="password" type="password"
+                  placeholder="Masukkan password" value="<?php
+                  echo $_SESSION["password"] ?>">
+
               </div>
               <!-- Save changes button-->
               <br>
-              <button class="btn btn-primary" type="button" onclick="document.location='edit-profil.php'">Ubah
-                Profil</button>
+              <button class="btn btn-primary" name="submit" type="submit">Ubah Profil</button>
             </form>
           </div>
         </div>
@@ -320,6 +351,16 @@ if (isset($_SESSION["user_id"])) {
   <script src="lib/counterup/counterup.min.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script>
+  function passFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
 
 </body>
 

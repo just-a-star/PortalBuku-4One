@@ -76,7 +76,7 @@ if (!$stmt->prepare($sql)) {
     die("SQL error:" . $mysqli->error);
 }
 
-$stmt->bind_param("ssisss", $_POST["nama_depan"], $_POST["nama_belakang"], $_POST["no_telp"], $_POST["alamat"], $_POST["email"], $password_hash);
+$stmt->bind_param("ssisss", $_POST["nama_depan"], $_POST["nama_belakang"], $_POST["no_telepon"], $_POST["alamat"], $_POST["email"], $password_hash);
 
 if ($stmt->execute()) {
     header("Location: sign-up-berhasil.html");

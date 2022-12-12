@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$dbname = "portal_buku_new";
+$dbname = "portal_buku";
 $username = "root";
 $password = "";
 $port = 3307;

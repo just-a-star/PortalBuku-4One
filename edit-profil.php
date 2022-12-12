@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_SESSION["user_id"])) {
   $mysqli = require __DIR__ . "/database.php";
-
+  
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
 
@@ -51,7 +51,7 @@ if (isset($_SESSION["user_id"])) {
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
-                  <?php echo $_SESSION["nama_depan"] ?>
+                  <?php echo $user["nama_depan"] ?>
                 </a>
               </li>
             </ul>
@@ -136,39 +136,37 @@ if (isset($_SESSION["user_id"])) {
         <div class="card mb-4">
           <div class="card-header">Detail Akun</div>
           <div class="card-body">
-            <form action="proses-up-profil.php" method="post">
+            <form action="proses-update-profile.php" method="post">
               <!-- Form Row-->
               <div class="row gx-3 mb-3">
                 <!-- Form Group (first name)-->
                 <div class="col-md-6">
                   <label class="small mb-1" for="nama_depan">Nama Depan</label>
                   <input class="form-control" id="nama_depan" name="nama_depan" type="text"
-                    value="<?php echo $_SESSION["nama_depan"] ?>">
+                    value="<?php echo $user["nama_depan"] ?>">
                 </div>
                 <!-- Form Group (last name)-->
                 <div class="col-md-6">
                   <label class="small mb-1" for="nama_belakang">Nama Belakang</label>
                   <input class="form-control" id="nama_belakang" name="nama_belakang" type="text"
-                    value="<?php echo $_SESSION["nama_belakang"] ?>">
+                    value="<?php echo $user["nama_belakang"] ?>">
                 </div>
               </div>
               <!-- Form Group (No Telp)-->
               <div class="mb-3">
                 <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
                 <input class="form-control" id="no_telepon" name="no_telepon" type="tel"
-                  value="<?php echo $_SESSION["no_telepon"] ?>">
+                  value="<?php echo $user["no_telepon"] ?>">
               </div>
               <!-- Form Group (Email)-->
               <div class="mb-3">
                 <label class="small mb-1" for="email">Email</label>
-                <input class="form-control" id="email" name="email" type="email"
-                  value="<?php echo $_SESSION["email"] ?>">
+                <input class="form-control" id="email" name="email" type="email" value="<?php echo $user["email"] ?>">
               </div>
               <!-- Form Group (username)-->
               <div class="mb-3">
                 <label class="small mb-1" for="alamat">Alamat</label>
-                <input class="form-control" id="alamat" name="alamat" type="text"
-                  value="<?php echo $_SESSION["alamat"] ?>">
+                <input class="form-control" id="alamat" name="alamat" type="text" value="<?php echo $user["alamat"] ?>">
               </div>
               <!-- Form Group (Password)-->
               <div class="mb-3">
@@ -179,7 +177,7 @@ if (isset($_SESSION["user_id"])) {
               </div>
               <!-- Save changes button-->
               <br>
-              <button class="btn btn-primary" type="button">Ubah Profil</button>
+              <button class="btn btn-primary" type="submit">Ubah Profil</button>
             </form>
           </div>
         </div>
@@ -327,14 +325,14 @@ if (isset($_SESSION["user_id"])) {
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <script>
-    function passFunction() {
-      var x = document.getElementById("password");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
+  function passFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
+  }
   </script>
 
 </body>
