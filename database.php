@@ -1,15 +1,17 @@
 <?php
 
 $host = "localhost";
-$dbname = "portal_buku";
+$dbname = "login_db";
 $username = "root";
 $password = "";
+$port = 3307;
 
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,
                      password: $password,
-                     database: $dbname
+                     database: $dbname,
+                     port: $port
                     );
                      
 
