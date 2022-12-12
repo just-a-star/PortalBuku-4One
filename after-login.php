@@ -7,8 +7,10 @@ if (isset($_SESSION["user_id"])) {
 
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
-  
-  $result = $mysqli->query($sql); $user = $result->fetch_assoc(); } ?>
+
+  $result = $mysqli->query($sql);
+  $user = $result->fetch_assoc();
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +47,10 @@ if (isset($_SESSION["user_id"])) {
                 <a class="nav-link" href="about us.html">Tentang Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /></a>
+                <a class="nav-link" href="profil.php">
+                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
+                  <?php echo $_SESSION["nama_depan"] ?>
+                </a>
               </li>
             </ul>
           </div>
@@ -96,15 +100,8 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='login.php'" type="button"
-              class="btn btn-primary btn-blok">Login</button>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="d-grid ms-auto">
-            <button onclick="document.location='sign-up.html'" class="btn btn-outline-primary btn-blok">
-              Sign Up
-            </button>
+            <button onclick="document.location='logout.php'" type="button"
+              class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
       </div>

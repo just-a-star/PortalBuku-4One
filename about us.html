@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 session_start();
 
@@ -8,7 +8,7 @@ if (isset($_SESSION["user_id"])) {
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
   
-  $result = $mysqli->query($sql); $user = $result->fetch_assoc(); } ?>
+  $result = $mysqli->query($sql); $user = $result->fetch_assoc(); } ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,11 +42,11 @@ if (isset($_SESSION["user_id"])) {
                 <a class="nav-link" href="#">Mitra Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about us.html">Tentang Portal Buku</a>
+                <a class="nav-link" href="#">Tentang Portal Buku</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /></a>
+                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo, Sausan</a>
               </li>
             </ul>
           </div>
@@ -112,158 +112,118 @@ if (isset($_SESSION["user_id"])) {
   </div>
   <!-- Navbar End -->
 
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+      <!-- <h1 class="display-4 text-white animated slideInDown mb-3">About Us</h1> -->
+      <h1 class="text-white">Dengan Buku Kami Membangun Negeri</h1>
+      <!-- <nav aria-label="breadcrumb animated slideInDown">
+        <ol class="breadcrumb justify-content-center mb-0">
+          <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+          <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+          <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
+        </ol>
+      </nav> -->
+    </div>
+  </div>
+  <!-- Page Header End -->
 
-  <br />
 
-  <div class="container text-center">
+  <div class="container">
     <div class="row">
       <div class="col"></div>
       <div class="col-6">
-        <br />
-        <h3>Temukan buku yang kamu cari</h3>
-        <p style="text-align: left">
-          Hai hai teman-teman! suka baca buku? atau sedang mencari referensi
-          materi? kami dari Portal Buku.id menyediakan berbagai jenis buku
-          yang bisa teman-teman sewa untuk waktu yang telah ditentukan dengan
-          harga sesuai kantong mahasiswa.
-        </p>
-        <img src="gambar/buku.jpg" alt="" style="width: 100%" />
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br />
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-3">
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">Sewa</button>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-primary">
-            Terima Buku
-          </button>
-        </div>
-      </div>
-      <div class="col"></div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <br />
-  <br />
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-6">
-        <h5>Mempunyai buku lebih? Donasikan!</h5>
+        <h5 class="text-center">ABOUT US</h5><br>
         <p>
-          Donasi buku akan menjadi hak milik kami dan akan kami sewakan atau
-          berikan kepada mahasiswa yang membutuhkan buku tersebut
+          Portal buku adalah website dimana kalian bisa mendonasikan, menyewa dan meminta buku untuk para pelajar. Potal
+          Buku.id terinspirasi dari kurangnya inisiatif pelajar untuk mencari atau membaca buku ke perpustakaan dan
+          banyaknya pelajar yang membutuhkan buku tetapi tidak mempunyai cukup uang untuk membeli ataupun menyewa buku.
+          Portal buku merupakan website yang tujuannya yaitu seseorang bisa mendonasikan buku-buku yang tidak dibutuhkan
+          untuk orang-orang yang membutuhkan, memudahkan pelajar dalam mencari dan menyewa buku yang dibutuhkan.
         </p>
         <br />
-        <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">
-            Klik disini untuk Donasi Buku
-          </button>
-        </div>
       </div>
       <div class="col"></div>
     </div>
   </div>
-  <br /><br /><br /><br />
 
-  <!-- Keunggulan -->
-  <!-- <div class="container"> -->
-  <!-- <div class="row">
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-        </div> -->
-
-  <div class="container overflow-hidden">
-    <div class="row gx-5">
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/shield-fill-check.svg" alt="icon-shield" /> Aman
-            Terpecaya
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
-        </div>
+  <!-- Team Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h4 class="section-title text-center px-3">MEET THE TEAM</h4>
+        <h1 class="display-6 mb-4">Dedicated to blabla, with 100 years of combined experience blabla</h1>
       </div>
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/clock-fill.svg" alt="icon-jam" /> Tepat Waktu
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="gambar/team-1.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Bintang Rahmatullah</h5>
+                <span>Ketua - 21523283</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="p-3 border fasilitas">
-          <h6>
-            <img src="gambar/headset.svg" alt="icon-headset" /> Customer
-            Service
-          </h6>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
-          </p>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Aisya H</h5>
+                <span>Anggota - 21523061</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Fadhilah Andriana C.</h5>
+                <span>Anggota - 21523016</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Sausan Trisdiatin</h5>
+                <span>Anggota - 21523052</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img src="gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- </div> -->
+  <!-- Team End -->
 
-  <br /><br />
-
-  <!-- Sponsor -->
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <h6>Sponsor</h6>
-      </div>
-    </div>
-  </div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <img src="gambar/DPK.png" alt="" style="width: 8%" />
-        <img src="gambar/LOGO_INDOMIE.png" alt="" style="width: 8%" />
-        <img src="gambar/logo-bsi.png" alt="" style="width: 8%" />
-      </div>
-    </div>
-  </div>
-  <br />
 
   <hr class="h" />
 

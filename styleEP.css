@@ -11,7 +11,7 @@ body{
 }
 
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../gambar/baca-buku.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../gambar/baca_buku.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -80,6 +80,7 @@ input[type=text] {
     border: 2px solid #EF9273;
     border-radius: 4px;
 }
+
 input[type=password] {
     border: 2px solid #EF9273;
     border-radius: 4px;
@@ -149,6 +150,22 @@ ul.no-bullets {
 }
 
 
+.nav-borders .nav-link.active  {
+    color: #EF9273;
+    border-bottom-color: #EF9273;
+}
+.nav-borders .nav-link {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
 
 
