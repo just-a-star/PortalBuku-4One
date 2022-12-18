@@ -9,7 +9,7 @@ if (isset($_POST["submit"])) {
   $email = $_POST["email"];
   $alamat = $_POST["alamat"];
   $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-  
+
   $mysqli = require __DIR__ . "/database.php";
 
   $sql = "UPDATE `user` SET
@@ -19,7 +19,7 @@ WHERE id= {$_SESSION["user_id"]}";
   $result = $mysqli->query($sql);
   // $user = $result->fetch_assoc();
 
-  if($result){
+  if ($result) {
     header("Location: profil.php?msg=Berhasil update profile");
   } else {
     echo "Gagal" . mysqli_error($mysqli);
@@ -352,14 +352,14 @@ WHERE id= {$_SESSION["user_id"]}";
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <script>
-  function passFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+    function passFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
     }
-  }
   </script>
 
 </body>

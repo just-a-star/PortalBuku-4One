@@ -1,0 +1,84 @@
+body{
+    background-color: #FEF9F8;
+}
+
+.nav-link{
+    color: black;
+}
+
+.header{
+    background-color: #EF9273;
+}
+
+.container-fluid{
+    padding-right: 75px;
+}
+
+.navbar-brand{
+    color: white;
+    font-size: 200%;
+    font-family: Abril Fatface; 
+    font-weight: bold;
+}
+
+.input-group button[type=button]{ 
+    border: 2px solid #EF9273;
+}
+
+input[type=text] {
+    border: 2px solid #EF9273;
+    border-radius: 4px;
+}
+
+input[type=email] {
+    border: 2px solid #EF9273;
+    border-radius: 4px;
+}
+
+.form-select{
+    border: 2px solid #EF9273;
+}
+
+.fasilitas{
+    background-color: #FFE2D8;
+}
+
+p{
+    font-size: 90%;
+}
+
+.h{
+    width: 100%;
+    height: 5px;
+    border: 5px solid #EF9273;
+    background-color: #EF9273;
+}
+
+#peta{
+    background-color: white;
+}
+
+#hubkami{
+    background-color: white;
+}
+
+#pesan {
+    border: 2px solid #EF9273;
+    border-radius: 4px;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer{
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    background-color: #EF9273;
+}
+
+
+
+
