@@ -46,4 +46,10 @@ validation
         document.getElementById("sign-up").submit();
     });
     
-    
+    // Nambahin nama depan
+    // nama belakang
+    // nomor telepon
+    //email
+    // alamat
+    //
+    // password

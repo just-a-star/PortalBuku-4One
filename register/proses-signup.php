@@ -5,9 +5,9 @@ if (empty($_POST["nama_depan"])) {
     die("Nama depan tidak boleh kosong");
 }
 
-if (empty($_POST["nama_belakang"])) {
-    die("Nama belakang tidak boleh kosong");
-}
+// if (empty($_POST["nama_belakang"])) {
+//     die("Nama belakang tidak boleh kosong");
+// }
 
 if (preg_match("/[a-z]/i", $_POST["no_telepon"])) {
     die("Nomor telepon tidak valid");
@@ -65,21 +65,21 @@ if ($_POST["password"] !== $_POST["konfirmasi_password"]) {
 // }
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+$tipe_akun = $_POST["tipe_akun"];
+$mysqli = require ("../connection/database.php");
 
-$mysqli = require __DIR__ . "/database.php";
-
-$sql = "INSERT INTO user (nama_depan, nama_belakang, no_telepon, alamat, email, password_hash)
-        VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO user (nama_depan, nama_belakang, no_telepon, alamat, email, password_hash, tipe_akun)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $mysqli->stmt_init();
 if (!$stmt->prepare($sql)) {
     die("SQL error:" . $mysqli->error);
 }
 
-$stmt->bind_param("ssisss", $_POST["nama_depan"], $_POST["nama_belakang"], $_POST["no_telepon"], $_POST["alamat"], $_POST["email"], $password_hash);
+$stmt->bind_param("ssissss", $_POST["nama_depan"], $_POST["nama_belakang"], $_POST["no_telepon"], $_POST["alamat"], $_POST["email"], $password_hash, $tipe_akun);
 
 if ($stmt->execute()) {
-    header("Location: sign-up-berhasil.html");
+    header("Location: /4One/PortalBuku-4One/register/sign-up-berhasil.html");
 
 } else {
     echo "SQL error:" . $mysqli->error;

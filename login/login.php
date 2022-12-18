@@ -4,7 +4,7 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require ("../connection/database.php");
     
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
@@ -18,6 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         if (password_verify($_POST["password"], $user["password_hash"])) {
             
+          if($user["tipe_akun"] == "admin"){
+            session_start();
+            
+            session_regenerate_id();
+            
+            $_SESSION["id_admin"] = $user["id"];
+            $_SESSION["nama_admin"] = $user["nama_depan"];
+            $_SESSION["email_admin"] = $user["email"];
+            
+            header("Location: /4One/PortalBuku-4One/admin/admin-dashboard.php");
+            exit;
+        }
+          else if($user["tipe_akun"] == "user"){
             session_start();
             
             session_regenerate_id();
@@ -30,8 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["alamat"] = $user["alamat"];
             $_SESSION["password"] = $user["password"];
             
-            header("Location: after-login.php");
+            header("Location: /4One/PortalBuku-4One/homepage.php");
             exit;
+        }
         }
     }
     
@@ -45,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
-  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styleLP.css" />
+  <link href="\4One\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
 </head>
 
@@ -111,14 +125,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button>Log in</button>
   </form> -->
   <script>
-    function passFunction() {
-      var x = document.getElementById("password");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
+  function passFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
+  }
   </script>
 </body>
 

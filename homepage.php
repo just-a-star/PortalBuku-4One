@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION["user_id"])) {
-  $mysqli = require __DIR__ . "/database.php";
+  $mysqli = require ("..\PortalBuku-4One\connection\database.php");
 
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
@@ -20,8 +20,8 @@ if (isset($_SESSION["user_id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styleLP.css" />
+  <link href="\4One\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
 </head>
 
 <body>
@@ -48,8 +48,8 @@ if (isset($_SESSION["user_id"])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="profil.php">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
-                  <?php echo $_SESSION["nama_depan"] ?>
+                  <img src="/4One/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
+                  <?php echo "Halo, " . $_SESSION["nama_depan"] ?>
                 </a>
               </li>
             </ul>
@@ -83,7 +83,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="gambar/search.svg" alt="icon-search" />
+                <img src="/4One/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -100,7 +100,7 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='logout.php'" type="button"
+            <button onclick="document.location='/4One/PortalBuku-4One/login/logout.php'" type="button"
               class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
@@ -124,7 +124,7 @@ if (isset($_SESSION["user_id"])) {
           yang bisa teman-teman sewa untuk waktu yang telah ditentukan dengan
           harga sesuai kantong mahasiswa.
         </p>
-        <img src="gambar/buku.jpg" alt="" style="width: 100%" />
+        <img src="/4One/PortalBuku-4One\resources\gambar\buku.jpg" alt="buku" style="width: 100%" />
       </div>
       <div class="col"></div>
     </div>
