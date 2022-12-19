@@ -3,53 +3,53 @@
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-    $mysqli = require ("../connection/database.php");
-    
-    $sql = sprintf("SELECT * FROM user
+
+  $mysqli = require("../connection/database.php");
+
+  $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    
-    if ($user) {
-        
-        if (password_verify($_POST["password"], $user["password_hash"])) {
-            
-          if($user["tipe_akun"] == "admin"){
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["id_admin"] = $user["id"];
-            $_SESSION["nama_admin"] = $user["nama_depan"];
-            $_SESSION["email_admin"] = $user["email"];
-            
-            header("Location: /4One/PortalBuku-4One/admin/admin-dashboard.php");
-            exit;
-        }
-          else if($user["tipe_akun"] == "user"){
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["user_id"] = $user["id"];
-            $_SESSION["nama_depan"] = $user["nama_depan"];
-            $_SESSION["nama_belakang"] = $user["nama_belakang"];
-            $_SESSION["no_telepon"] = $user["no_telepon"];
-            $_SESSION["email"] = $user["email"];
-            $_SESSION["alamat"] = $user["alamat"];
-            $_SESSION["password"] = $user["password"];
-            
-            header("Location: /4One/PortalBuku-4One/homepage.php");
-            exit;
-        }
-        }
+    $mysqli->real_escape_string($_POST["email"])
+  );
+
+  $result = $mysqli->query($sql);
+
+  $user = $result->fetch_assoc();
+
+  if ($user) {
+
+    if (password_verify($_POST["password"], $user["password_hash"])) {
+
+      if ($user["tipe_akun"] == "admin") {
+        session_start();
+
+        session_regenerate_id();
+
+        $_SESSION["id_admin"] = $user["id"];
+        $_SESSION["nama_admin"] = $user["nama_depan"];
+        $_SESSION["email_admin"] = $user["email"];
+
+        header("Location: /4One/PortalBuku-4One/admin/admin-dashboard.php");
+        exit;
+      } else if ($user["tipe_akun"] == "user") {
+        session_start();
+
+        session_regenerate_id();
+
+        $_SESSION["user_id"] = $user["id"];
+        $_SESSION["nama_depan"] = $user["nama_depan"];
+        $_SESSION["nama_belakang"] = $user["nama_belakang"];
+        $_SESSION["no_telepon"] = $user["no_telepon"];
+        $_SESSION["email"] = $user["email"];
+        $_SESSION["alamat"] = $user["alamat"];
+        $_SESSION["password"] = $user["password"];
+
+        header("Location: /PortalBuku-4One/homepage.php");
+        exit;
+      }
     }
-    
-    $is_invalid = true;
+  }
+
+  $is_invalid = true;
 }
 
 ?>
@@ -59,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <title>Login</title>
   <meta charset="UTF-8">
-  <link href="\4One\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
+  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
 </head>
 
@@ -103,6 +103,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <!-- Save changes button-->
             <br>
             <button class="btn btn-primary" type="submit">Log In</button>
+            <p>
+              Belum punya akun?
+              <a href="/PortalBuku-4One/register/sign-up.html">Sign Up Sekarang!</a>
+            </p>
           </form>
         </div>
       </div>
@@ -125,14 +129,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button>Log in</button>
   </form> -->
   <script>
-  function passFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+    function passFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
     }
-  }
   </script>
 </body>
 

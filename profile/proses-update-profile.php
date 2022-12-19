@@ -36,8 +36,8 @@ WHERE id= {$_SESSION["user_id"]}";
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styleEP.css" />
+  <link href="PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="PortalBuku-4One\css\styleEP.css" />
 </head>
 
 <body>
@@ -74,7 +74,7 @@ WHERE id= {$_SESSION["user_id"]}";
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
+                  <img src="PortalBuku-4One\resources\gambar/person-circle.svg" alt="icon-user" /> Halo,
                   <?php echo $_SESSION["nama_depan"] ?>
                 </a>
               </li>
@@ -109,7 +109,7 @@ WHERE id= {$_SESSION["user_id"]}";
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="gambar/search.svg" alt="icon-search" />
+                <img src="PortalBuku-4One\resources\gambar/search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -324,10 +324,10 @@ WHERE id= {$_SESSION["user_id"]}";
     </div>
     <div class="row">
       <h2>
-        <img src="gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="gambar/facebook.svg" alt="logo-fb" />
-        <img src="gambar/instagram.svg" alt="logo-ig" />
-        <img src="gambar/tiktok.svg" alt="logo-tiktok" />
+        <img src="PortalBuku-4One\resources\gambar/whatsapp.svg" alt="logo-wa" />
+        <img src="PortalBuku-4One\resources\gambar/facebook.svg" alt="logo-fb" />
+        <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig" />
+        <img src="PortalBuku-4One\resources\gambar/tiktok.svg" alt="logo-tiktok" />
       </h2>
     </div>
   </div>

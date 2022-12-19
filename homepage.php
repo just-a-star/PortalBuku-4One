@@ -20,7 +20,7 @@ if (isset($_SESSION["user_id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="\4One\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
 </head>
 
@@ -48,7 +48,7 @@ if (isset($_SESSION["user_id"])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="profil.php">
-                  <img src="/4One/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
+                  <img src="/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
                   <?php echo "Halo, " . $_SESSION["nama_depan"] ?>
                 </a>
               </li>

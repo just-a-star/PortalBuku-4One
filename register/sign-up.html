@@ -1,196 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link
-      href="\4One\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
-    <!-- Automatic validation -->
-    <script
-      src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"
-      defer
-    ></script>
-    <!--! Untuk sementara comment dulu karena id belum jadi -->
-    <!-- <script src="/4One/PortalBuku-4One/js/validation.js" defer></script> -->
-  </head>
 
-  <body>
-    <!-- Header -->
-    <section class="header sticky-top">
-      <nav class="navbar">
-        <div class="container">
-          <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
-          </div>
-        </div>
-      </nav>
-    </section>
-    <br />
-    <section class="container">
-      <div class="col">
-        <!-- Account details card-->
-        <div class="card mb-4">
-          <div class="card-header">
-            <h4>Sign Uppp</h4>
-          </div>
-          <div class="card-body">
-            <form
-              action="/4One/PortalBuku-4One/register/proses-signup.php"
-              method="post"
-              id="sign-up"
-            >
-              <!-- Form Row-->
-              <div class="row gx-3 mb-3">
-                <!-- Form Group (first name)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="nama_depan">Nama Depan</label>
-                  <input
-                    class="form-control"
-                    id="nama_depan"
-                    name="nama_depan"
-                    type="text"
-                    placeholder="Masukkan nama depan"
-                    value=""
-                  />
-                </div>
-                <!-- Form Group (last name)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="nama_belakang"
-                    >Nama Belakang</label
-                  >
-                  <input
-                    class="form-control"
-                    id="nama_belakang"
-                    name="nama_belakang"
-                    type="text"
-                    placeholder="Masukkan nama belakang"
-                    value=""
-                  />
-                </div>
-              </div>
-              <!-- Form Group (No Telp)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
-                <input
-                  class="form-control"
-                  id="no_telepon"
-                  name="no_telepon"
-                  type="tel"
-                  placeholder="Masukkan nomor telepon"
-                  value=""
-                />
-              </div>
-              <!-- Form Group (Email)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="email">Email</label>
-                <input
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Masukkan email"
-                  value=""
-                />
-              </div>
-              <!-- Form Group (username)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="alamat">Alamat</label>
-                <input
-                  class="form-control"
-                  id="alamat"
-                  name="alamat"
-                  type="text"
-                  placeholder="Masukkan alamat"
-                  value=""
-                />
-              </div>
-              <!-- Form Row-->
-              <div class="row gx-3 mb-3">
-                <!-- Form Group (password)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="password">Password</label>
-                  <input
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Masukkan password"
-                    value=""
-                  />
-                  <input type="checkbox" onclick="passFunction()" />Tampilkan
-                  Password
-                </div>
-                <!-- Form Group (konfirmasi password)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="konfirmasi_password"
-                    >Konfirmasi Password</label
-                  >
-                  <input
-                    class="form-control"
-                    id="konfirmasi_password"
-                    name="konfirmasi_password"
-                    type="password"
-                    placeholder="Masukkan password anda kembali"
-                    name="birthday"
-                    value=""
-                  />
-                  <input type="checkbox" onclick="kpassFunction()" />Tampilkan
-                  Konfirmasi Password
-                </div>
-                <div class="col-md-4">
-                  <label class="small mb-2" for="tipe_akun">Tipe Akun</label>
-                  <select class="tipe_akun" id="tipe_akun" name="tipe_akun">
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                  </select>
-                </div>
-                <div>
-                  <p>
-                    Sudah punya akun?
-                    <a href="/4One/PortalBuku-4One/login/login.php"
-                      >login sekarang!</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <!-- Save changes button-->
-              <br />
-              <button class="btn btn-primary" type="submit">Sign Up</button>
-            </form>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
+  <!-- Automatic validation -->
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+  <!--! Untuk sementara comment dulu karena id belum jadi -->
+  <!-- <script src="/4One/PortalBuku-4One/js/validation.js" defer></script> -->
+</head>
+
+<body>
+  <!-- Header -->
+  <section class="header sticky-top">
+    <nav class="navbar">
+      <div class="container">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
         </div>
       </div>
-    </section>
+    </nav>
+  </section>
+  <br />
+  <section class="container">
+    <div class="col">
+      <!-- Account details card-->
+      <div class="card mb-4">
+        <div class="card-header">
+          <h4>Sign Up</h4>
+        </div>
+        <div class="card-body">
+          <form action="/PortalBuku-4One/register/proses-signup.php" method="post" id="sign-up">
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+              <!-- Form Group (first name)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="nama_depan">Nama Depan</label>
+                <input class="form-control" id="nama_depan" name="nama_depan" type="text"
+                  placeholder="Masukkan nama depan" value="" />
+              </div>
+              <!-- Form Group (last name)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="nama_belakang">Nama Belakang</label>
+                <input class="form-control" id="nama_belakang" name="nama_belakang" type="text"
+                  placeholder="Masukkan nama belakang" value="" />
+              </div>
+            </div>
+            <!-- Form Group (No Telp)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
+              <input class="form-control" id="no_telepon" name="no_telepon" type="tel"
+                placeholder="Masukkan nomor telepon" value="" />
+            </div>
+            <!-- Form Group (Email)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="email">Email</label>
+              <input class="form-control" id="email" name="email" type="email" placeholder="Masukkan email" value="" />
+            </div>
+            <!-- Form Group (username)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="alamat">Alamat</label>
+              <input class="form-control" id="alamat" name="alamat" type="text" placeholder="Masukkan alamat"
+                value="" />
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+              <!-- Form Group (password)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="password">Password</label>
+                <input class="form-control" id="password" name="password" type="password"
+                  placeholder="Masukkan password" value="" />
+                <input type="checkbox" onclick="passFunction()" />Tampilkan
+                Password
+              </div>
+              <!-- Form Group (konfirmasi password)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="konfirmasi_password">Konfirmasi Password</label>
+                <input class="form-control" id="konfirmasi_password" name="konfirmasi_password" type="password"
+                  placeholder="Masukkan password anda kembali" name="birthday" value="" />
+                <input type="checkbox" onclick="kpassFunction()" />Tampilkan
+                Konfirmasi Password
+              </div>
+              <div class="col-md-4">
+                <label class="small mb-2" for="tipe_akun">Tipe Akun</label>
+                <select class="tipe_akun" id="tipe_akun" name="tipe_akun">
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <div>
+                <p>
+                  Sudah punya akun?
+                  <a href="/PortalBuku-4One/login/login.php">login sekarang!</a>
+                </p>
+              </div>
+            </div>
+            <!-- Save changes button-->
+            <br />
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      function passFunction() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-          x.type = "text";
-        } else {
-          x.type = "password";
-        }
+  <script>
+    function passFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
       }
+    }
 
-      function kpassFunction() {
-        var y = document.getElementById("konfirmasi_password");
-        if (y.type === "password") {
-          y.type = "text";
-        } else {
-          y.type = "password";
-        }
-        if (x.type === "password") {
-          y.type = "text";
-        } else {
-          y.type = "password";
-        }
+    function kpassFunction() {
+      var y = document.getElementById("konfirmasi_password");
+      if (y.type === "password") {
+        y.type = "text";
+      } else {
+        y.type = "password";
       }
-    </script>
-  </body>
+      if (x.type === "password") {
+        y.type = "text";
+      } else {
+        y.type = "password";
+      }
+    }
+  </script>
+</body>
+
 </html>

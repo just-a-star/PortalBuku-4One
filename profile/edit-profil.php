@@ -22,7 +22,7 @@ if (isset($_SESSION["user_id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="..\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="styleEP.css" />
 </head>
 
@@ -50,7 +50,7 @@ if (isset($_SESSION["user_id"])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="gambar/person-circle.svg" alt="icon-user" /> Halo,
+                  <img src="PortalBuku-4One\resources\gambar/person-circle.svg" alt="icon-user" /> Halo,
                   <?php echo $user["nama_depan"] ?>
                 </a>
               </li>
@@ -66,7 +66,7 @@ if (isset($_SESSION["user_id"])) {
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1" onclick="document.location='after-login.php'">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='PortalBuku-4One\homepage.php'">Portal Buku.id</span>
         </div>
       </div>
     </nav>
@@ -85,7 +85,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="gambar/search.svg" alt="icon-search" />
+                <img src="PortalBuku-4One\resources\gambar/search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -127,7 +127,7 @@ if (isset($_SESSION["user_id"])) {
           <div class="card-header">Foto Profil</div>
           <div class="card-body text-center">
             <!-- Profile picture image-->
-            <img class="img-account-profile rounded-circle mb-2" src="gambar/person-circle.svg" alt="">
+            <img class="img-account-profile rounded-circle mb-2" src="PortalBuku-4One\resources\gambar/person-circle.svg" alt="">
           </div>
         </div>
       </div>

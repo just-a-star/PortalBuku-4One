@@ -19,7 +19,7 @@ if (isset($_SESSION["user_id"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
   <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
 </head>
 
 <?php include '../PortalBuku-4One/header.php'; ?>
@@ -38,7 +38,7 @@ if (isset($_SESSION["user_id"])) {
         yang bisa teman-teman sewa untuk waktu yang telah ditentukan dengan
         harga sesuai kantong mahasiswa.
       </p>
-      <img src="/4One/PortalBuku-4One\resources\gambar\buku.jpg" alt="" style="width: 100%" />
+      <img src="/PortalBuku-4One\resources\gambar\buku.jpg" alt="" style="width: 100%" />
     </div>
     <div class="col"></div>
   </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION["user_id"])) {
     <div class="col">
       <div class="p-3 border fasilitas">
         <h6>
-          <img src="/4One/PortalBuku-4One\resources\gambar\shield-fill-check.svg" alt="icon-shield" /> Aman
+          <img src="/PortalBuku-4One\resources\gambar\shield-fill-check.svg" alt="icon-shield" /> Aman
           Terpecaya
         </h6>
         <p>
@@ -127,7 +127,7 @@ if (isset($_SESSION["user_id"])) {
     <div class="col">
       <div class="p-3 border fasilitas">
         <h6>
-          <img src="/4One/PortalBuku-4One\resources\gambar\clock-fill.svg" alt="icon-jam" /> Tepat Waktu
+          <img src="/PortalBuku-4One\resources\gambar\clock-fill.svg" alt="icon-jam" /> Tepat Waktu
         </h6>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -140,7 +140,7 @@ if (isset($_SESSION["user_id"])) {
     <div class="col">
       <div class="p-3 border fasilitas">
         <h6>
-          <img src="/4One/PortalBuku-4One\resources\gambar\headset.svg" alt="icon-headset" /> Customer
+          <img src="/PortalBuku-4One\resources\gambar\headset.svg" alt="icon-headset" /> Customer
           Service
         </h6>
         <p>
@@ -168,9 +168,9 @@ if (isset($_SESSION["user_id"])) {
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <img src="/4One/PortalBuku-4One\resources\gambar\DPK.png" alt="" style="width: 8%" />
-      <img src="/4One/PortalBuku-4One\resources\gambar\LOGO_INDOMIE.png" alt="" style="width: 8%" />
-      <img src="/4One/PortalBuku-4One\resources\gambar\logo-bsi.png" alt="" style="width: 8%" />
+      <img src="/PortalBuku-4One\resources\gambar\DPK.png" alt="" style="width: 8%" />
+      <img src="/PortalBuku-4One\resources\gambar\LOGO_INDOMIE.png" alt="" style="width: 8%" />
+      <img src="/PortalBuku-4One\resources\gambar\logo-bsi.png" alt="" style="width: 8%" />
     </div>
   </div>
 </div>

@@ -21,12 +21,11 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <img src="/4One/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
+                  <img src="/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
                   <!-- If there is session print name -->
                   <?php if (isset($_SESSION["nama_depan"])) : ?>
                   <?php echo "Halo, " . $_SESSION["nama_depan"] ?>
                   <?php endif; ?>
-
               </li>
             </ul>
           </div>
@@ -59,7 +58,7 @@
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="/4One/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
+                <img src="/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -76,13 +75,13 @@
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='/4One/PortalBuku-4One/login/login.php'" type="button"
+            <button onclick="document.location='/PortalBuku-4One/login/login.php'" type="button"
               class="btn btn-primary btn-blok">Login</button>
           </div>
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='/4One/PortalBuku-4One/register/sign-up.html'" type="button"
+            <button onclick="document.location='/PortalBuku-4One/register/sign-up.html'" type="button"
               class="btn btn-outline-primary btn-blok">
               Sign Up
             </button>

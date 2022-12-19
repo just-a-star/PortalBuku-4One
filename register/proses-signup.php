@@ -79,7 +79,7 @@ if (!$stmt->prepare($sql)) {
 $stmt->bind_param("ssissss", $_POST["nama_depan"], $_POST["nama_belakang"], $_POST["no_telepon"], $_POST["alamat"], $_POST["email"], $password_hash, $tipe_akun);
 
 if ($stmt->execute()) {
-    header("Location: /4One/PortalBuku-4One/register/sign-up-berhasil.html");
+    header("Location: /PortalBuku-4One/register/sign-up-berhasil.html");
 
 } else {
     echo "SQL error:" . $mysqli->error;

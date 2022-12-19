@@ -81,6 +81,7 @@
                   Kirim Pesan
                 </button>
               </div>
+              <br>
             </div>
           </div>
         </div>
@@ -95,10 +96,10 @@
     </div>
     <div class="row">
       <h2>
-        <img src="gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="gambar/facebook.svg" alt="logo-fb" />
-        <img src="gambar/instagram.svg" alt="logo-ig" />
-        <img src="gambar/tiktok.svg" alt="logo-tiktok" />
+        <img src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt="logo-wa" />
+        <img src="/PortalBuku-4One/resources/gambar/facebook.svg" alt="logo-fb" />
+        <img src="/PortalBuku-4One/resources/gambar/instagram.svg" alt="logo-ig" />
+        <img src="/PortalBuku-4One/resources/gambar/tiktok.svg" alt="logo-tiktok" />
       </h2>
     </div>
   </div>
