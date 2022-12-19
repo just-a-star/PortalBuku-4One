@@ -3,11 +3,12 @@ session_start();
 include "../connection/database.php";
 include "../connection/connection.php";
 
-$admin_id = $_SESSION['id_admin'];
+$admin_id = $_SESSION['admin_id'];
 
 if(!isset($admin_id)){
   header("Location: ../index.php");
-};
+}
+;
 ?>
 
 <!DOCTYPE html>

@@ -22,11 +22,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav me-auto">
-          <a href="index.html" class="nav-item nav-link active">Home</a>
-          <a href="about us.html" class="nav-item nav-link">Produk</a>
-          <a href="contact.html" class="nav-item nav-link">Pesanan</a>
-          <a href="contact.html" class="nav-item nav-link">Data user</a>
-          <a href="contact.html" class="nav-item nav-link">Pesan</a>
+          <a href="admin-dashboard.php" class="nav-item nav-link active">Dashboard</a>
+          <a href="admin-produk.php" class="nav-item nav-link">Produk</a>
+          <a href="admin-pesanan.php" class="nav-item nav-link">Pesanan</a>
+          <a href="admin-data-user.php" class="nav-item nav-link">Data user</a>
+          <a href="admin-pesan.php" class="nav-item nav-link">Pesan</a>
           <a href="contact.html" class="nav-item nav-link"><img
               src="/4One/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
             <!-- If there is session print name -->
