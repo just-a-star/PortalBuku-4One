@@ -28,7 +28,7 @@
           <a href="admin-data-user.php" class="nav-item nav-link">Data user</a>
           <a href="admin-pesan.php" class="nav-item nav-link">Pesan</a>
           <a href="contact.html" class="nav-item nav-link"><img
-              src="/4One/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
+              src="/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
             <!-- If there is session print name -->
 
 
@@ -38,7 +38,7 @@
                 <p class="card-text">Nama : <span><?php echo $_SESSION['nama_admin'] ?></span></p>
                 <p class="card-text">Email : <span><?php echo $_SESSION['email_admin'] ?></span></p>
 
-                <a href="/4One/PortalBuku-4One/login/logout.php" class="btn btn-primary">Logout</a>
+                <a href="/PortalBuku-4One/login/logout.php" class="btn btn-primary">Logout</a>
               </div>
             </div>
             <!-- <div class="card text-center" style="width: 18rem;">

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["nama_admin"] = $user["nama_depan"];
         $_SESSION["email_admin"] = $user["email"];
 
-        header("Location: /4One/PortalBuku-4One/admin/admin-dashboard.php");
+        header("Location: /PortalBuku-4One/admin/admin-dashboard.php");
         exit;
       } else if ($user["tipe_akun"] == "user") {
         session_start();
@@ -129,14 +129,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button>Log in</button>
   </form> -->
   <script>
-    function passFunction() {
-      var x = document.getElementById("password");
-      if (x.type === "password") {
-        x.type = "text";
-      } else {
-        x.type = "password";
-      }
+  function passFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
     }
+  }
   </script>
 </body>
 
