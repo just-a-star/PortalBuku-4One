@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
   $alamat = $_POST["alamat"];
   $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-  $mysqli = require __DIR__ . "/database.php";
+  $mysqli = require "../connection/database.php";
 
   $sql = "UPDATE `user` SET
 `nama_depan`='$nama_depan',`nama_belakang`='$nama_belakang',`no_telepon`='$no_telepon',`email`='$email',`alamat`='$email',`password_hash`='$password_hash'
@@ -36,14 +36,15 @@ WHERE id= {$_SESSION["user_id"]}";
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="PortalBuku-4One\css\styleEP.css" />
+  <link href="..\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="..\css\styleEP.css" />
 </head>
 
 <body>
   <?php
   $id = $_SESSION["user_id"];
-  $mysqli = require __DIR__ . "/database.php";
+  // $mysqli = require __DIR__ . "/database.php";
+  $mysqli = require "../connection/database.php";
 
   $sql = "SELECT * FROM user
           WHERE id = $id LIMIT 1";
@@ -64,18 +65,18 @@ WHERE id= {$_SESSION["user_id"]}";
           <div class="collapse navbar-collapse" id="collapsibleTopbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Butuh bantuan?</a>
+                <a class="nav-link" href="#hubkami">Butuh bantuan?</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Mitra Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tentang Portal Buku</a>
+                <a class="nav-link" href="/PortalBuku-4One/about us after login.php">Tentang Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <img src="PortalBuku-4One\resources\gambar/person-circle.svg" alt="icon-user" /> Halo,
-                  <?php echo $_SESSION["nama_depan"] ?>
+                <a class="nav-link" href="profile\profil.php">
+                  <img src="/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
+                  <?php echo "Halo, " . $_SESSION["nama_depan"] ?>
                 </a>
               </li>
             </ul>
@@ -90,7 +91,8 @@ WHERE id= {$_SESSION["user_id"]}";
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1" onclick="document.location='after-login.php'">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/homepage.php'">Portal
+            Buku.id</span>
         </div>
       </div>
     </nav>
@@ -109,7 +111,7 @@ WHERE id= {$_SESSION["user_id"]}";
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="PortalBuku-4One\resources\gambar/search.svg" alt="icon-search" />
+                <img src="..\resources\gambar/search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -126,7 +128,7 @@ WHERE id= {$_SESSION["user_id"]}";
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='logout.php'" type="button"
+            <button onclick="document.location='/PortalBuku-4One/login/logout.php'" type="button"
               class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
@@ -151,7 +153,7 @@ WHERE id= {$_SESSION["user_id"]}";
           <div class="card-header">Foto Profil</div>
           <div class="card-body text-center">
             <!-- Profile picture image-->
-            <img class="img-account-profile rounded-circle mb-2" src="gambar/person-circle.svg" alt="">
+            <img class="img-account-profile rounded-circle mb-2" src="..\resources\gambar/person-circle.svg" alt="">
           </div>
         </div>
       </div>
@@ -324,10 +326,10 @@ WHERE id= {$_SESSION["user_id"]}";
     </div>
     <div class="row">
       <h2>
-        <img src="PortalBuku-4One\resources\gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="PortalBuku-4One\resources\gambar/facebook.svg" alt="logo-fb" />
-        <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig" />
-        <img src="PortalBuku-4One\resources\gambar/tiktok.svg" alt="logo-tiktok" />
+        <img src="..\resources\gambar/whatsapp.svg" alt="logo-wa" />
+        <img src="..\resources\gambar/facebook.svg" alt="logo-fb" />
+        <img src="..\resources\gambar/instagram.svg" alt="logo-ig" />
+        <img src="..\resources\gambar/tiktok.svg" alt="logo-tiktok" />
       </h2>
     </div>
   </div>

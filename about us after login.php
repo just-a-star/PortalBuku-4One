@@ -3,16 +3,14 @@
 session_start();
 
 if (isset($_SESSION["user_id"])) {
-  $mysqli = require "../connection/database.php";
+  $mysqli = require("..\PortalBuku-4One\connection\database.php");
 
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
 
   $result = $mysqli->query($sql);
   $user = $result->fetch_assoc();
-}
-
-?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +20,8 @@ if (isset($_SESSION["user_id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="..\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="..\css\styleEP.css" />
+  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
 </head>
 
 <body>
@@ -66,7 +64,7 @@ if (isset($_SESSION["user_id"])) {
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/homepage.php'">Portal
+          <span class="navbar-brand mb-0 h1" onclick="document.location='homepage.php'">Portal
             Buku.id</span>
         </div>
       </div>
@@ -86,7 +84,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="..\resources\gambar/search.svg" alt="icon-search" />
+                <img src="/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -103,7 +101,7 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-          <button onclick="document.location='/PortalBuku-4One/login/logout.php'" type="button"
+            <button onclick="document.location='/PortalBuku-4One/login/logout.php'" type="button"
               class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
@@ -112,78 +110,150 @@ if (isset($_SESSION["user_id"])) {
   </div>
   <!-- Navbar End -->
 
-  <div class="container-xl px-4 mt-4">
-    <!-- Account page navigation-->
-    <nav class="nav nav-borders">
-      <a class="nav-link active ms-0" id="pageeditprofil" href="" target="__blank">Profil</a>
-      <a class="nav-link" href="" target="__blank">Pembayaran</a>
-      <a class="nav-link" href="" target="__blank">Keamanan</a>
-      <a class="nav-link" href="" target="__blank">Notifikasi</a>
-    </nav>
-    <hr class="mt-0 mb-4">
+  <!-- Page Header Start -->
+  <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+      <!-- <h1 class="display-4 text-white animated slideInDown mb-3">About Us</h1> -->
+      <h1 class="text-white">Dengan Buku Kami Membangun Negeri</h1>
+      <!-- <nav aria-label="breadcrumb animated slideInDown">
+        <ol class="breadcrumb justify-content-center mb-0">
+          <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+          <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+          <li class="breadcrumb-item text-primary active" aria-current="page">About</li>
+        </ol>
+      </nav> -->
+    </div>
+  </div>
+  <!-- Page Header End -->
+
+
+  <div class="container">
     <div class="row">
-      <div class="col-xl-4">
-        <!-- Profile picture card-->
-        <div class="card mb-4 mb-xl-0">
-          <div class="card-header">Foto Profil</div>
-          <div class="card-body text-center">
-            <!-- Profile picture image-->
-            <img class="img-account-profile rounded-circle mb-2" src="..\resources\gambar/person-circle.svg" alt="">
+      <div class="col"></div>
+      <div class="col-6">
+        <h5 class="text-center">ABOUT US</h5><br>
+        <p>
+          Portal buku adalah website dimana kalian bisa mendonasikan, menyewa dan meminta buku untuk para pelajar. Potal
+          Buku.id terinspirasi dari kurangnya inisiatif pelajar untuk mencari atau membaca buku ke perpustakaan dan
+          banyaknya pelajar yang membutuhkan buku tetapi tidak mempunyai cukup uang untuk membeli ataupun menyewa buku.
+          Portal buku merupakan website yang tujuannya yaitu seseorang bisa mendonasikan buku-buku yang tidak dibutuhkan
+          untuk orang-orang yang membutuhkan, memudahkan pelajar dalam mencari dan menyewa buku yang dibutuhkan.
+        </p>
+        <br />
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+  <!-- Team Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h4 class="section-title text-center px-3">MEET THE TEAM</h4>
+        <h1 class="display-6 mb-4">Dedicated to blabla, with 100 years of combined experience blabla</h1>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4"
+              src="/PortalBuku-4One/resources/gambar/team-1.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Bintang Rahmatullah</h5>
+                <span>Ketua - 21523283</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xl-8">
-        <!-- Account details card-->
-        <div class="card mb-4">
-          <div class="card-header">Detail Akun</div>
-          <div class="card-body">
-            <form>
-              <!-- Form Row-->
-              <div class="row gx-3 mb-3">
-                <!-- Form Group (first name)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="nama_depan">Nama Depan</label>
-                  <input class="form-control" id="nama_depan" name="nama_depan" type="text"
-                    value="<?php echo $user["nama_depan"] ?>" disabled>
-                </div>
-                <!-- Form Group (last name)-->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="nama_belakang">Nama Belakang</label>
-                  <input class="form-control" id="nama_belakang" name="nama_belakang" type="text"
-                    value="<?php echo $user["nama_belakang"] ?>" disabled>
-                </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4"
+              src="/PortalBuku-4One/resources/gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Aisya H</h5>
+                <span>Anggota - 21523061</span>
               </div>
-              <!-- Form Group (No Telp)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="no_telepon">Nomor Telepon</label>
-                <input class="form-control" id="no_telepon" name="no_telepon" type="tel"
-                  value="<?php echo $user["no_telepon"] ?>" disabled>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/instagram.svg" alt=""></a>
               </div>
-              <!-- Form Group (Email)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="email">Email</label>
-                <input class="form-control" id="email" name="email" type="email" value="<?php echo $user["email"] ?>"
-                  disabled>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4"
+              src="/PortalBuku-4One/resources/gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Fadhilah Andriana C.</h5>
+                <span>Anggota - 21523016</span>
               </div>
-              <!-- Form Group (username)-->
-              <div class="mb-3">
-                <label class="small mb-1" for="alamat">Alamat</label>
-                <input class="form-control" id="alamat" name="alamat" type="text" value="<?php echo $user["alamat"] ?>"
-                  disabled>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/instagram.svg" alt=""></a>
               </div>
-              <!-- Save changes button-->
-              <br>
-              <button class="btn btn-primary" type="button" onclick="document.location='proses-update-profile.php'">Ubah
-                Profil</button>
-            </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="team-item text-center p-4">
+            <img class="img-fluid border rounded-circle w-75 p-2 mb-4"
+              src="/PortalBuku-4One/resources/gambar/team-2.jpg" alt="">
+            <div class="team-text">
+              <div class="team-title">
+                <h5>Sausan Trisdiatin</h5>
+                <span>Anggota - 21523052</span>
+              </div>
+              <div class="team-social">
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/facebook.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt=""></a>
+                <a class="btn btn-square btn-primary rounded-circle" href=""><img
+                    src="/PortalBuku-4One/resources/gambar/instagram.svg" alt=""></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- Team End -->
 
 
+  <hr class="h" />
 
+  <div class="container">
+    <h6>Sejarah Portal Buku.id</h6>
+    <p>
+      Portal buku adalah website dimana kalian bisa mendonasikan, menyewa dan
+      meminta buku untuk para pelajar. Potal Buku.id terinspirasi dari
+      kurangnya inisiatif pelajar untuk mencari atau membaca buku ke
+      perpustakaan dan banyaknya pelajar yang membutuhkan buku tetapi tidak
+      mempunyai cukup uang untuk membeli ataupun menyewa buku. Portal buku
+      merupakan website yang tujuannya yaitu seseorang bisa mendonasikan
+      buku-buku yang tidak dibutuhkan untuk orang-orang yang membutuhkan,
+      memudahkan pelajar dalam mencari dan menyewa buku yang dibutuhkan.
+    </p>
+  </div>
 
   <br /><br /><br />
 
@@ -294,10 +364,10 @@ if (isset($_SESSION["user_id"])) {
     </div>
     <div class="row">
       <h2>
-        <img src="../resources/gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="../resources/gambar/facebook.svg" alt="logo-fb" />
-        <img src="../resources/gambar/instagram.svg" alt="logo-ig" />
-        <img src="../resources/gambar/tiktok.svg" alt="logo-tiktok" />
+        <img src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt="logo-wa" />
+        <img src="/PortalBuku-4One/resources/gambar/facebook.svg" alt="logo-fb" />
+        <img src="/PortalBuku-4One/resources/gambar/instagram.svg" alt="logo-ig" />
+        <img src="/PortalBuku-4One/resources/gambar/tiktok.svg" alt="logo-tiktok" />
       </h2>
     </div>
   </div>

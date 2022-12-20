@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION["user_id"])) {
-  $mysqli = require ("..\PortalBuku-4One\connection\database.php");
+  $mysqli = require("..\PortalBuku-4One\connection\database.php");
 
   $sql = "SELECT * FROM user
           WHERE id = {$_SESSION["user_id"]}";
@@ -21,7 +21,7 @@ if (isset($_SESSION["user_id"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
   <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/4One/PortalBuku-4One/css/styleLP.css" />
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
 </head>
 
 <body>
@@ -38,16 +38,16 @@ if (isset($_SESSION["user_id"])) {
           <div class="collapse navbar-collapse" id="collapsibleTopbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Butuh bantuan?</a>
+                <a class="nav-link" href="#hubkami">Butuh bantuan?</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Mitra Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about us.html">Tentang Portal Buku</a>
+                <a class="nav-link" href="/PortalBuku-4One/about us after login.php">Tentang Portal Buku</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="profil.php">
+                <a class="nav-link" href="profile\profil.php">
                   <img src="/PortalBuku-4One/resources/gambar/person-circle.svg" alt="icon-user" />
                   <?php echo "Halo, " . $_SESSION["nama_depan"] ?>
                 </a>
@@ -64,7 +64,8 @@ if (isset($_SESSION["user_id"])) {
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/homepage.php'">Portal
+            Buku.id</span>
         </div>
       </div>
     </nav>
@@ -83,7 +84,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="input-group ">
               <input type="text" class="form-control" placeholder="Cari buku" aria-describedby="button-addon2" />
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                <img src="/4One/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
+                <img src="/PortalBuku-4One\resources\gambar\search.svg" alt="icon-search" />
               </button>
             </div>
           </form>
@@ -100,7 +101,7 @@ if (isset($_SESSION["user_id"])) {
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
-            <button onclick="document.location='/4One/PortalBuku-4One/login/logout.php'" type="button"
+            <button onclick="document.location='/PortalBuku-4One/login/logout.php'" type="button"
               class="btn btn-primary btn-blok">Logout</button>
           </div>
         </div>
@@ -124,7 +125,7 @@ if (isset($_SESSION["user_id"])) {
           yang bisa teman-teman sewa untuk waktu yang telah ditentukan dengan
           harga sesuai kantong mahasiswa.
         </p>
-        <img src="/4One/PortalBuku-4One\resources\gambar\buku.jpg" alt="buku" style="width: 100%" />
+        <img src="/PortalBuku-4One\resources\gambar\buku.jpg" alt="buku" style="width: 100%" />
       </div>
       <div class="col"></div>
     </div>
@@ -136,7 +137,7 @@ if (isset($_SESSION["user_id"])) {
       <div class="col"></div>
       <div class="col-3">
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">Sewa</button>
+          <button type="button" onclick="document.location='/PortalBuku-4One/user/user_sewaBuku.html'" class="btn btn-primary">Sewa</button>
         </div>
       </div>
       <div class="col-3">
@@ -199,7 +200,7 @@ if (isset($_SESSION["user_id"])) {
       <div class="col">
         <div class="p-3 border fasilitas">
           <h6>
-            <img src="gambar/shield-fill-check.svg" alt="icon-shield" /> Aman
+            <img src="/PortalBuku-4One/resources/gambar/shield-fill-check.svg" alt="icon-shield" /> Aman
             Terpecaya
           </h6>
           <p>
@@ -213,7 +214,7 @@ if (isset($_SESSION["user_id"])) {
       <div class="col">
         <div class="p-3 border fasilitas">
           <h6>
-            <img src="gambar/clock-fill.svg" alt="icon-jam" /> Tepat Waktu
+            <img src="/PortalBuku-4One/resources/gambar/clock-fill.svg" alt="icon-jam" /> Tepat Waktu
           </h6>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -226,7 +227,7 @@ if (isset($_SESSION["user_id"])) {
       <div class="col">
         <div class="p-3 border fasilitas">
           <h6>
-            <img src="gambar/headset.svg" alt="icon-headset" /> Customer
+            <img src="/PortalBuku-4One/resources/gambar/headset.svg" alt="icon-headset" /> Customer
             Service
           </h6>
           <p>
@@ -254,9 +255,9 @@ if (isset($_SESSION["user_id"])) {
   <div class="container text-center">
     <div class="row">
       <div class="col">
-        <img src="gambar/DPK.png" alt="" style="width: 8%" />
-        <img src="gambar/LOGO_INDOMIE.png" alt="" style="width: 8%" />
-        <img src="gambar/logo-bsi.png" alt="" style="width: 8%" />
+        <img src="/PortalBuku-4One/resources/gambar/DPK.png" alt="" style="width: 8%" />
+        <img src="/PortalBuku-4One/resources/gambar/LOGO_INDOMIE.png" alt="" style="width: 8%" />
+        <img src="/PortalBuku-4One/resources/gambar/logo-bsi.png" alt="" style="width: 8%" />
       </div>
     </div>
   </div>
@@ -387,10 +388,10 @@ if (isset($_SESSION["user_id"])) {
     </div>
     <div class="row">
       <h2>
-        <img src="gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="gambar/facebook.svg" alt="logo-fb" />
-        <img src="gambar/instagram.svg" alt="logo-ig" />
-        <img src="gambar/tiktok.svg" alt="logo-tiktok" />
+        <img src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt="logo-wa" />
+        <img src="/PortalBuku-4One/resources/gambar/facebook.svg" alt="logo-fb" />
+        <img src="/PortalBuku-4One/resources/gambar/instagram.svg" alt="logo-ig" />
+        <img src="/PortalBuku-4One/resources/gambar/tiktok.svg" alt="logo-tiktok" />
       </h2>
     </div>
   </div>
