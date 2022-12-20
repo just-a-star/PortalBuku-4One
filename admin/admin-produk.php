@@ -142,8 +142,9 @@ if(isset($_POST['tambah_admin'])){
 <body>
   <?php include "admin-header.php"; ?>
   <section class="tambah-produk">
-    <h1>Portal buku produk</h1>
+    <h1 style="text-align:center;">Portal buku produk </h1>
     <form action="" method="post" enctype="multipart/form-data">
+      <div class="container-fluid px-5">
       <h3>tambah produk</h3>
       <div class="form-group">
         <label for="nama">Nama Buku</label>

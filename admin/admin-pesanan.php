@@ -44,7 +44,8 @@ if(isset($_GET['delete'])){
   <?php include "admin-header.php"; ?>
 
   <section class="pesanan">
-    <h1>Pesanan yang ditambahkan oleh user</h1>
+    <div class="container-fluid px-5">
+    <h1 style="text-align: center;">Pesanan yang ditambahkan oleh user</h1>
     <div class="box-container">
       <?php
       $select_pesanan = mysqli_query($mysqli, "SELECT * FROM `order`") or die(mysqli_error($mysqli));
@@ -75,12 +76,14 @@ if(isset($_GET['delete'])){
       </div>
 
     </div>
+    </div>
     <?php
         }
       }else{
         echo '<p class="kosong">Tidak ada pesanan</p>';
       }?>
   </section>
+
   <!-- Link javascript admin -->
   <script src=""></script>
 </body>

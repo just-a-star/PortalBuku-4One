@@ -20,7 +20,7 @@ if(!isset($admin_id)){
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
-  <!-- <link rel="stylesheet" href="styleAD.css" /> -->
+   <!--<link rel="stylesheet" href="/PortalBuku-4One/css/styleAD.css" />-->
   <title>Dashboard</title>
 </head>
 
@@ -28,31 +28,21 @@ if(!isset($admin_id)){
   <?php include "admin-header.php"; ?>
   <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
-    <div class="bg" id="sidebar-wrapper">
-      <div class="sidebar-heading text-center py-4 second-text fs-4 fw-bold text-uppercase border-bottom">
-        PortalBuku.id</div>
+    <!--<div class="bg" id="sidebar-wrapper">
       <div class="list-group list-group-flush my-3">
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Data
-          Admin</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Data
-          Donatur</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Data
-          Penyewa</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Data
-          Penerima</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-            class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-            class="fas fa-power-off me-2"></i>Logout</a>
-      </div>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Product</a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Order</a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">User Data</a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">Message</a>
+      </div>-->
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Dashboard start -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+      <!--<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
         <div class="d-flex align-items-center">
           <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
           <h2 class="fs-2 m-0">Dashboard</h2>
@@ -78,12 +68,12 @@ if(!isset($admin_id)){
             </li>
           </ul>
         </div>
-      </nav>
+      </nav>-->
 
       <div class="container-fluid px-5">
         <div class="card-group">
           <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img src="/PortalBuku-4One/resources/img/jam.png" alt="Card image cap" style="width: 50%;">
             <div class="card-body">
               <?php
               $total_pendings = 0;
@@ -103,8 +93,9 @@ if(!isset($admin_id)){
 
             </div>
           </div>
+          
           <div class="card">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img src="/PortalBuku-4One/resources/img/debit.png" alt="Card image cap" style="width: 50%;">
             <div class="card-body">
               <?php
               $total_completed = 0;
@@ -124,7 +115,7 @@ if(!isset($admin_id)){
 
             </div>
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <img src="/PortalBuku-4One/resources/img/paperbag.png" alt="Card image cap" style="width: 50%;">
               <div class="card-body">
                 <?php
               $select_orders = mysqli_query($mysqli, "SELECT * FROM `order`") or die('query gagal');
@@ -137,7 +128,7 @@ if(!isset($admin_id)){
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <img src="/PortalBuku-4One/resources/img/keranjangw.png" alt="Card image cap" style="width: 50%;">
               <div class="card-body">
                 <?php
               $select_buku = mysqli_query($mysqli, "SELECT * FROM `buku`") or die('query gagal');
@@ -150,7 +141,7 @@ if(!isset($admin_id)){
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <img src="/PortalBuku-4One/resources/img/userb.png" alt="Card image cap" style="width: 50%;">
               <div class="card-body">
                 <?php
               $select_user_biasa = mysqli_query($mysqli, "SELECT * FROM `user` WHERE tipe_akun = 'user'") or die('query gagal');
@@ -163,7 +154,7 @@ if(!isset($admin_id)){
               </div>
 
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img src="/PortalBuku-4One/resources/img/admin.png" alt="Card image cap" style="width: 50%;">
                 <div class="card-body">
                   <?php
                   $select_admin = mysqli_query($mysqli, "SELECT * FROM `user` WHERE tipe_akun = 'admin'") or die('query gagal');
@@ -176,7 +167,7 @@ if(!isset($admin_id)){
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img src="/PortalBuku-4One/resources/img/user.png" alt="Card image cap" style="width: 50%;">
                 <div class="card-body">
                   <?php
                   $select_pengguna = mysqli_query($mysqli, "SELECT * FROM `user`") or die('query gagal');
@@ -189,7 +180,7 @@ if(!isset($admin_id)){
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img src="/PortalBuku-4One/resources/img/message.png" alt="Card image cap" style="width: 50%;">
                 <div class="card-body">
                   <?php
                   $select_pesan = mysqli_query($mysqli, "SELECT * FROM `pesan`") or die('query gagal');
@@ -205,17 +196,20 @@ if(!isset($admin_id)){
 
             </div>
           </div>
+
+            </div>
+          </div>
+
         </div>
 
-        <div class="col-md-2 ms-auto">
+        <!--<div class="col-md-2 ms-auto">
           <a class="btn btn-lg" href="#" role="button">Tambah data</a>
-        </div>
+        </div>-->
 
-      </div>
-    </div>
+      <!--</div>
+    </div>-->
   </div>
   <!-- /#page-content-wrapper -->
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
