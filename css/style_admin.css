@@ -150,3 +150,14 @@ ul.no-bullets {
 .img-account-profile {
   width: 60%;
 }
+
+.tambah-buku form .box {
+  width: 100%;
+  background-color: var(--light-bg);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  padding: 1.2rem 1.4rem;
+  color: var(--black);
+  font-size: 1.8rem;
+  border: var(--border);
+}
