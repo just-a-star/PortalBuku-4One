@@ -102,25 +102,48 @@ if (isset($_POST['tambah_buku'])) {
 
 <body>
   <?php include "admin-header.php"; ?>
-  <section class="tambah-produk">
-    <h1>Portal buku produk</h1>
+  <section class="menambahkan-buku">
+    <h1>Buku</h1>
+
     <form action="" method="post" enctype="multipart/form-data">
-      <h3>tambah produk</h3>
-      <div class="form-group">
-        <label for="nama">Nama Buku</label>
-        <input type="text" name="nama" id="nama" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label for="kategori">Kategori</label>
-        <select name="kategori" id="kategori" class="form-control">
-          <option value="">Pilih Kategori</option>
-          <?php
-          $kategori_query = mysqli_query($mysqli, "SELECT `kategori` FROM `kategori`") or die("data salah: " . mysqli_error($mysqli));
-          while($kategori = mysqli_fetch_array($kategori_query)){
-          ?>
-          <option value="<?php $kategori['kategori']; ?>"><?php echo $kategori['kategori']; ?></option>
-          <?php } ?>
-        </select>
+      <h3>tambah buku</h3>
+      <input type="text" name="nama" class="box" placeholder="masukkan nama buku" required>
+      <input type="text" name="harga_sewa" class="box" placeholder="masukkan harga sewa" required>
+      <input type="file" name="gambar" accept="image/jpg, image/jpeg, image/png" class="box" required>
+      <input type="text" name="deskripsi_singkat" class="box" placeholder="masukkan deskripsi singkat" required>
+      <input type="text" name="genre" class="box" placeholder="masukkan genre" required>
+      <input type="text" name="kategori" class="box" placeholder="masukkan kategori" required>
+      <input type="text" name="penulis" class="box" placeholder="masukkan penulis" required>
+      <input type="text" name="penerbit" class="box" placeholder="masukkan penerbit" required>
+      <input type="submit" value="tambah buku" name="tambah_buku" class="btn btn-primary">
+    </form>
+  </section>
+
+  <!-- Dibawah ini untuk memperlihatkan produk buku2 yg sudah ditambahkan -->
+
+  <section class="perlihatkan-buku">
+    <div class="box-container">
+      <?php
+   $select_buku = mysqli_query($mysqli, "SELECT * FROM `buku`") or die("data salah: " . mysqli_error($mysqli));
+   if (mysqli_num_rows($select_buku) > 0) {
+      while ($fetch_buku = mysqli_fetch_assoc($select_buku)) {
+      ?> <div class="box">
+        <img src="../resources/gambar_upload/<?php echo $fetch_buku['gambar']; ?>" alt="">
+        <div class="name"><?php echo $fetch_buku['nama'] ?></div>
+        <div class="harga">Rp. <?php echo $fetch_buku['harga_sewa'] ?></div>
+        <div class="deskripsi"><?php echo $fetch_buku['deskripsi_singkat'] ?></div>
+        <div class="genre"><?php echo $fetch_buku['genre'] ?></div>
+        <div class="kategori"><?php echo $fetch_buku['kategori'] ?></div>
+        <div class="penulis"><?php echo $fetch_buku['penulis'] ?></div>
+        <div class="penerbit"><?php echo $fetch_buku['penerbit'] ?></div>
+        <a href="admin-produk.php?hapus=<?php echo $fetch_buku['id']; ?>" class="btn btn-primary">Hapus buku</a>
+        <?php
+      }
+   } else {
+      echo '<p>Belum ada buku</p>';
+   }
+
+        ?>
       </div>
   </section>
 

@@ -137,7 +137,8 @@ if (isset($_SESSION["user_id"])) {
       <div class="col"></div>
       <div class="col-3">
         <div class="d-grid gap-2">
-          <button type="button" onclick="document.location='/PortalBuku-4One/user/user_sewaBuku.html'" class="btn btn-primary">Sewa</button>
+          <button type="button" onclick="document.location='/PortalBuku-4One/user/user_sewaBuku.php'"
+            class="btn btn-primary">Sewa</button>
         </div>
       </div>
       <div class="col-3">
