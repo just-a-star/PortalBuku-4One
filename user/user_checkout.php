@@ -83,14 +83,14 @@ if(isset($_POST['order_btn'])){
 
   <div class="container">
     <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="width: 100%;">
-    <div class="heading">
-    <h3>checkout</h3>
-    <p> <a href="home.php">home</a> / checkout </p>
-  </div>
+      <div class="heading">
+        <h3>checkout</h3>
+        <p> <a href="/PortalBuku-4One/homepage.php">home</a> / checkout </p>
+      </div>
 
-  <section class="display-order">
+      <section class="display-order">
 
-    <?php  
+        <?php  
       $grand_total = 0;
       $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
       if(mysqli_num_rows($select_cart) > 0){
@@ -98,79 +98,79 @@ if(isset($_POST['order_btn'])){
             $total_price = ($fetch_cart['harga_sewa'] * $fetch_cart['kuantitas']);
             $grand_total += $total_price;
    ?>
-    <p> <?php echo $fetch_cart['nama']; ?>
-      <span>(<?php echo '$'.$fetch_cart['harga_sewa'].'/-'.' x '. $fetch_cart['kuantitas']; ?>)</span>
-    </p>
-    <?php
+        <p> <?php echo $fetch_cart['nama']; ?>
+          <span>(<?php echo '$'.$fetch_cart['harga_sewa'].'/-'.' x '. $fetch_cart['kuantitas']; ?>)</span>
+        </p>
+        <?php
       }
    }else{
       echo '<p class="empty">your cart is empty</p>';
    }
    ?>
-    <div class="grand-total"> grand total : <span>$<?php echo $grand_total; ?>/-</span> </div>
+        <div class="grand-total"> grand total : <span>$<?php echo $grand_total; ?>/-</span> </div>
 
-  </section>
+      </section>
 
-  <section class="checkout">
+      <section class="checkout">
 
-    <form action="" method="post">
-      <h3>place your order</h3>
-      <div class="flex" style="text-align: justify;">
-        <div class="inputBox">
-          <span>your name :</span>
-          <input type="text" name="name" required placeholder="enter your name">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>your number :</span>
-          <input type="number" name="number" required placeholder="enter your number">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>your email :</span>
-          <input type="email" name="email" required placeholder="enter your email">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>payment method :</span>
-          <select name="method">
-            <option value="cash on delivery">cash on delivery</option>
-            <option value="credit card">credit card</option>
-            <option value="paypal">paypal</option>
-            <option value="paytm">paytm</option>
-          </select>
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>Alamat :</span>
-          <input type="text" min="0" name="flat" required placeholder="e.g. nama jalan">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>Detail Alamat :</span>
-          <input type="text" name="street" required placeholder="e.g. nama gedung">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>city :</span>
-          <input type="text" name="city" required placeholder="e.g. Yogyakarta">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>provinsi :</span>
-          <input type="text" name="state" required placeholder="e.g. DIY">
-        </div>
-        <br>
-        <div class="inputBox">
-          <span>kode pos :</span>
-          <input type="number" min="0" name="pin_code" required placeholder="e.g. 214123">
-        </div>
-        <br>
-      </div>
-      <input type="submit" value="order now">
-  </div>
-  
+        <form action="" method="post">
+          <h3>place your order</h3>
+          <div class="flex" style="text-align: justify;">
+            <div class="inputBox">
+              <span>your name :</span>
+              <input type="text" name="name" required placeholder="enter your name">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>your number :</span>
+              <input type="number" name="number" required placeholder="enter your number">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>your email :</span>
+              <input type="email" name="email" required placeholder="enter your email">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>payment method :</span>
+              <select name="method">
+                <option value="cash on delivery">cash on delivery</option>
+                <option value="credit card">credit card</option>
+                <option value="paypal">paypal</option>
+                <option value="paytm">paytm</option>
+              </select>
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>Alamat :</span>
+              <input type="text" min="0" name="flat" required placeholder="e.g. nama jalan">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>Detail Alamat :</span>
+              <input type="text" name="street" required placeholder="e.g. nama gedung">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>city :</span>
+              <input type="text" name="city" required placeholder="e.g. Yogyakarta">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>provinsi :</span>
+              <input type="text" name="state" required placeholder="e.g. DIY">
+            </div>
+            <br>
+            <div class="inputBox">
+              <span>kode pos :</span>
+              <input type="number" min="0" name="pin_code" required placeholder="e.g. 214123">
+            </div>
+            <br>
+          </div>
+          <input type="submit" name="order_btn" value="order now">
+    </div>
+
     </form>
 
-  </section>
+    </section>
   </div>

@@ -168,7 +168,8 @@ if (isset($_SESSION["user_id"])) {
         </p>
         <br />
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-primary"
+            onclick="document.location='/PortalBuku-4One/user/user_donasi_buku.php'">
             Klik disini untuk Donasi Buku
           </button>
         </div>
