@@ -45,7 +45,7 @@ if(isset($_POST['masukkan_keranjang'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sewa Buku</title>
   <link href="..\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="../css/styleLP.css">
+  <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css">
 </head>
 
 <body>
@@ -123,7 +123,7 @@ if(isset($_POST['masukkan_keranjang'])){
           <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
           <!-- shopping cart -->
           <a href="/PortalBuku-4One/user/user_cart.php" class="nav-item nav-link me-3">
-            <img src="/PortalBuku-4One\resources\gambar\cart.svg" alt="Keranjang belanjaan" />
+            <img src="/PortalBuku-4One\resources\img\keranjangsu.png" alt="Keranjang belanjaan" style="width: 30%" />
 
         </div>
         <div class="col-2">
@@ -175,10 +175,10 @@ if(isset($_POST['masukkan_keranjang'])){
               </div>
             </div>
             <div class="carousel-item">
-              <img src="PortalBuku-4One\resources\img/novel.jpg" alt="slide2">
+              <img src="/PortalBuku-4One\resources\img/novel.jpg" alt="slide2">
             </div>
             <div class="carousel-item">
-              <img src="PortalBuku-4One\resources\img/novel.jpg" alt="slide3">
+              <img src="/PortalBuku-4One\resources\img/novel.jpg" alt="slide3">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -195,7 +195,7 @@ if(isset($_POST['masukkan_keranjang'])){
       </div>
     </div>
 
-    <div class="text-center">
+    <!--<div class="text-center">
       <h6>Temukan buku yang kamu cari!</h6>
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -228,7 +228,7 @@ if(isset($_POST['masukkan_keranjang'])){
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+    </div>-->
 
     <br>
 
@@ -247,8 +247,9 @@ if(isset($_POST['masukkan_keranjang'])){
         <input type="hidden" name="name" value="<?php echo $fetch_products['nama']; ?>">
         <input type="hidden" name="harga_sewa" value="<?php echo $fetch_products['harga_sewa']; ?>">
         <input type="hidden" name="gambar" value="<?php echo $fetch_products['gambar']; ?>">
-        <input type="submit" value="add to cart" name="masukkan_keranjang" class="btn">
+        <input type="submit" value="add to cart">
       </form>
+      <br>
       <?php
          }
       }else{
@@ -258,29 +259,28 @@ if(isset($_POST['masukkan_keranjang'])){
     </div>
 
     <div class="container">
-      <div></div>
       <h6>Semua buku</h6>
       <a href="/PortalBuku-4One\resources\gambar/buku.jpg" target="_blank"> <img
           src="/PortalBuku-4One\resources\gambar/buku.jpg" alt="" style="width: 10%;">
 
-        < <img src="/PortalBuku-4One\resources\img/buku1.jpg" alt="" style="width: 10%; height: 65px ;">
+         <img src="/PortalBuku-4One\resources\img/buku1.jpg" alt="" style="width: 10%; height: 65px ;">
           <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku4.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku5.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku6.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/buku7.jpg" alt="" style="width: 10%; height: 65px;">
-          <img src="PortalBuku-4One\resources\img/novel.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;"> 
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku3.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku4.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku5.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku6.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/buku7.jpg" alt="" style="width: 10%; height: 65px;">
+          <img src="/PortalBuku-4One\resources\img/novel.jpg" alt="" style="width: 10%; height: 65px;">
     </div>
     <br>
     <div class="container text-center">
@@ -299,9 +299,9 @@ if(isset($_POST['masukkan_keranjang'])){
     <div class="container text-center">
       <div class="row">
         <div class="col">
-          <img src="PortalBuku-4One\resources\gambar/DPK.png" alt="" style="width: 8%;">
-          <img src="PortalBuku-4One\resources\gambar/LOGO_INDOMIE.png" alt="" style="width: 8%;">
-          <img src="PortalBuku-4One\resources\gambar/logo-bsi.png" alt="" style="width: 8%;">
+          <img src="/PortalBuku-4One\resources\gambar/DPK.png" alt="" style="width: 8%;">
+          <img src="/PortalBuku-4One\resources\gambar/LOGO_INDOMIE.png" alt="" style="width: 8%;">
+          <img src="/PortalBuku-4One\resources\gambar/logo-bsi.png" alt="" style="width: 8%;">
         </div>
       </div>
     </div>
@@ -428,25 +428,26 @@ if(isset($_POST['masukkan_keranjang'])){
       </div>
       <div class="row">
         <h2>
-          <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
-          <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
-          <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
-          <img src="PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
+          <img src="/PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
+          <img src="/PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
+          <img src="/PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
+          <img src="/PortalBuku-4One\resources\gambar/instagram.svg" alt="logo-ig">
         </h2>
       </div>
     </div>
     <br><br><br>
 
-    <section class="footer">
+  </div>
+  </div>
+  </div>
+
+  <section class="footer">
       <div class="container text-center">
         <div class="row">
           <h6 style="font-size: 95%; ">&copy;2022 PortalBuku, 4One Corporate</h6>
         </div>
       </div>
     </section>
-  </div>
-  </div>
-  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 

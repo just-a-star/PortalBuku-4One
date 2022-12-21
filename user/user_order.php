@@ -35,6 +35,7 @@ if(!isset($user_id)){
 <body>
   <?php include "../header.php"; ?>
 
+  <div class=container>
   <div class="heading">
     <h3>your orders</h3>
     <p> <a href="home.php">home</a> / orders </p>
@@ -71,5 +72,7 @@ if(!isset($user_id)){
       }
       ?>
     </div>
+  </div>
+  
 
   </section>
