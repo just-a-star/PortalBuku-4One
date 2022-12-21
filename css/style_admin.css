@@ -80,6 +80,7 @@ body {
 }
 
 input[type="text"] {
+  width: auto;
   border: 2px solid #ef9273;
   border-radius: 4px;
 }

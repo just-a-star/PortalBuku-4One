@@ -19,6 +19,7 @@ if (isset($_SESSION["user_id"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
   <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
 </head>
 
