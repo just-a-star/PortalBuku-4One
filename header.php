@@ -72,6 +72,15 @@
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
+          <div class="col-2">
+            <div class="d-grid ms-auto">
+              <button onclick="document.location='/PortalBuku-4One/user/user_cart.php'" type="button"
+                class="btn btn-outline-primary btn-blok">
+                <img src="/PortalBuku-4One\resources\gambar\cart.svg" alt="Keranjang belanjaan" />
+              </button>
+            </div>
+          </div>
+
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">

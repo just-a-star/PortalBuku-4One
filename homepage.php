@@ -98,6 +98,7 @@ if (isset($_SESSION["user_id"])) {
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
+          <a href="/PortalBuku-4One/user/user_order.php" class="nav-item nav-link me-3">Pesanan saya</a>
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">

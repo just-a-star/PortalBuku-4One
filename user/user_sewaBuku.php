@@ -14,9 +14,26 @@ $user_id = $_SESSION['user_id'];
 $user_nama_depan = $_SESSION['nama_depan'];
 
 
-// if(!isset($user_id)){
-//   header("Location: ../index.php");
-// }
+if(!isset($user_id)){
+  header("Location: ../index.php");
+}
+
+if(isset($_POST['masukkan_keranjang'])){
+  $nama_buku = $_POST['name'];
+  $harga_buku = $_POST['harga_sewa'];
+  $jumlah_buku = $_POST['jumlah_buku'];
+  $gambar_buku = $_POST['gambar'];
+
+  $check_cart_numbers = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE user_id = '$user_id' AND nama = '$nama_buku'");
+
+  if(mysqli_num_rows($check_cart_numbers) > 0){
+    $pesan[] = "Buku sudah ada di keranjang";
+
+  }else{
+    mysqli_query($conn, "INSERT INTO `cart`(user_id, nama, harga_sewa, kuantitas, gambar) VALUES('$user_id', '$nama_buku', '$harga_buku', '$jumlah_buku', '$gambar_buku')") or die('query failed');
+    $pesan[] = 'product added to cart!';
+ }
+}
 ?>
 
 <!DOCTYPE html>
@@ -104,6 +121,10 @@ $user_nama_depan = $_SESSION['nama_depan'];
             </div>
           </div>
           <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
+          <!-- shopping cart -->
+          <a href="/PortalBuku-4One/user/user_cart.php" class="nav-item nav-link me-3">
+            <img src="/PortalBuku-4One\resources\gambar\cart.svg" alt="Keranjang belanjaan" />
+
         </div>
         <div class="col-2">
           <div class="d-grid ms-auto">
@@ -211,7 +232,33 @@ $user_nama_depan = $_SESSION['nama_depan'];
 
     <br>
 
+    <div class="box-container">
+
+      <?php  
+         $select_products = mysqli_query($mysqli, "SELECT * FROM `buku`") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+      ?>
+      <form action="" method="post" class="box">
+        <img class="gambar" src="../resources/gambar_upload/<?php echo $fetch_products['gambar']; ?>" alt="">
+        <div class="nama"><?php echo $fetch_products['nama']; ?></div>
+        <div class="harga_buku">$<?php echo $fetch_products['harga_sewa']; ?>/-</div>
+        <input type="number" min="1" name="jumlah_buku" value="1" class="qty">
+        <input type="hidden" name="name" value="<?php echo $fetch_products['nama']; ?>">
+        <input type="hidden" name="harga_sewa" value="<?php echo $fetch_products['harga_sewa']; ?>">
+        <input type="hidden" name="gambar" value="<?php echo $fetch_products['gambar']; ?>">
+        <input type="submit" value="add to cart" name="masukkan_keranjang" class="btn">
+      </form>
+      <?php
+         }
+      }else{
+         echo '<p class="empty">no products added yet!</p>';
+      }
+      ?>
+    </div>
+
     <div class="container">
+      <div></div>
       <h6>Semua buku</h6>
       <a href="/PortalBuku-4One\resources\gambar/buku.jpg" target="_blank"> <img
           src="/PortalBuku-4One\resources\gambar/buku.jpg" alt="" style="width: 10%;">
