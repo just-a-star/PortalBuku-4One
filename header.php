@@ -74,14 +74,6 @@
           <div class="col-3">
             <a href="contact.html" class="nav-item nav-link">Menjadi donatur</a>
           </div>
-          <div class="col-3">
-            <div class="d-grid ms-auto">
-              <button onclick="document.location='/PortalBuku-4One/user/user_cart.php'" type="button"
-                class="btn btn-outline-primary btn-blok">
-                <i class="bi bi-cart-plus"></i> Keranjang
-              </button>
-            </div>
-          </div>
           <div class="col-2">
             <div class="d-grid ms-auto">
               <button onclick="document.location='/PortalBuku-4One/login/login.php'" type="button"
@@ -91,9 +83,7 @@
           <div class="col-2">
             <div class="d-grid ms-auto">
               <button onclick="document.location='/PortalBuku-4One/register/sign-up.html'" type="button"
-                class="btn btn-outline-primary btn-blok">
-                Sign Up
-              </button>
+                class="btn btn-outline-primary btn-blok">Sign Up</button>
             </div>
           </div>
         </div>
