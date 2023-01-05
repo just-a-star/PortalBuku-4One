@@ -120,7 +120,7 @@ if (isset($_SESSION["user_id"])) {
         <div class="p-3 border fasilitas">
           <h6>
             <img src="/PortalBuku-4One/resources/gambar/shield-fill-check.svg" alt="icon-shield" /> Aman
-            Terpecaya
+            Tepercaya
           </h6>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -136,10 +136,9 @@ if (isset($_SESSION["user_id"])) {
             <img src="/PortalBuku-4One/resources/gambar/clock-fill.svg" alt="icon-jam" /> Tepat Waktu
           </h6>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
+            Tepat waktu memiliki arti tindakan mengerjakan apa yang harus dilakukan dengan tepat pada waktu yang telah
+            ditentukan sebelumnya. Sesuai dengan tujuan kami kepada Anda untuk selalu mengusahakan pelayanan dan
+            pengiriman buku yang tepat waktu.
           </p>
         </div>
       </div>
@@ -150,10 +149,10 @@ if (isset($_SESSION["user_id"])) {
             Service
           </h6>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-            dignissimos similique magnam possimus numquam provident maxime
-            assumenda mollitia enim minima ullam quos veniam consequuntur,
-            inventore culpa cum a odit rerum.
+            Customer Services kami selalu siap dalam menangani, mengumpulkan, mengatur, merespon, mengarahkan, dan
+            melayani para pengguna terkait dengan jalannya fungsi aplikasi kami. Apabila Anda memiliki masalah dan
+            keluhan
+            terhadap aplikasi kami, silahkan hubungi email portalbuku@gmail.com
           </p>
         </div>
       </div>
@@ -211,118 +210,7 @@ if (isset($_SESSION["user_id"])) {
 
   <br /><br /><br />
 
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <h6>Mari mengenal kami</h6>
-          <ul class="no-bullets">
-            <li>Artikel</li>
-            <li>About Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-          </ul>
-          <br />
-          <h6>Kategori Buku</h6>
-          <ul class="no-bullets">
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-            <li>Mitra Portal Buku</li>
-          </ul>
-        </div>
-        <div class="col-1">
-          <h6>Sewa</h6>
-          <ul class="no-bullets">
-            <li>Artikel</li>
-            <li>Artikel</li>
-            <li>Artikel</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <h6>Terima Buku</h6>
-          <ul class="no-bullets">
-            <li>Artikel</li>
-            <li>Artikel</li>
-            <li>Artikel</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <h6>Donasi Buku</h6>
-          <ul class="no-bullets">
-            <li>Artikel</li>
-            <li>Artikel</li>
-            <li>Artikel</li>
-          </ul>
-        </div>
-        <div class="col">
-          <div class="row">
-            <h6>Punya Sebuah Pertanyaan?</h6>
-            <p>
-              Kita dapat membantu kamu kapan saja, silahkan kirim pesan
-              melalui form dibawah :)
-            </p>
-            <div class="col ms-auto mb-2 mb-lg-0" id="hubkami">
-              <h5 class="text-center">Kontak kami:</h5>
-              <br />
-              <div class="row">
-                <div class="col mb-3">
-                  <label class="form-label">FIRST NAME</label>
-                  <input type="text" class="form-control" />
-                </div>
-                <div class="col mb-3">
-                  <label class="form-label">LAST NAME</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">EMAIL</label>
-                <input type="email" class="form-control" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">PESAN</label>
-                <textarea id="pesan" class="form-control" rows="3"></textarea>
-              </div>
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary">
-                  Kirim Pesan
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br /><br /><br /><br />
-
-  <div class="container text-center">
-    <div class="row">
-      <h6>Our Sosial Media</h6>
-    </div>
-    <div class="row">
-      <h2>
-        <img src="/PortalBuku-4One/resources/gambar/whatsapp.svg" alt="logo-wa" />
-        <img src="/PortalBuku-4One/resources/gambar/facebook.svg" alt="logo-fb" />
-        <img src="/PortalBuku-4One/resources/gambar/instagram.svg" alt="logo-ig" />
-        <img src="/PortalBuku-4One/resources/gambar/tiktok.svg" alt="logo-tiktok" />
-      </h2>
-    </div>
-  </div>
-  <br /><br /><br />
-
-  <section class="footer">
-    <div class="container text-center">
-      <div class="row">
-        <h6 style="font-size: 95%">&copy; 2022 PortalBuku, 4One Corporate</h6>
-      </div>
-    </div>
-  </section>
+  <?php include '../PortalBuku-4One/footer.php'; ?>
 
 
   <!-- JavaScript Libraries -->

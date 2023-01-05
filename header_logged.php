@@ -71,7 +71,7 @@
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link me-3">Menjadi donatur</a>
+                <a href="/PortalBuku-4One/user/user_donasi_buku.php" class="nav-item nav-link me-3">Menjadi donatur</a>
                 <a href="/PortalBuku-4One/user/user_order.php" class="nav-item nav-link me-3">Pesanan saya</a>
             </div>
             <div class="col-2" style="padding-right: 1%;">

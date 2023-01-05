@@ -53,7 +53,7 @@
             <h6>Punya Sebuah Pertanyaan?</h6>
             <p>
               Kita dapat membantu kamu kapan saja, silahkan kirim pesan
-              melalui form dibawah :)
+              melalui form dibawah ini
             </p>
             <div class="col ms-auto mb-2 mb-lg-0" id="hubkami">
               <h5 class="text-center">Kontak kami:</h5>
@@ -88,7 +88,7 @@
       </div>
     </div>
   </div>
-  <br /><br /><br /><br />
+  <br /><br />
 
   <div class="container text-center">
     <div class="row">
@@ -103,8 +103,7 @@
       </h2>
     </div>
   </div>
-  <br /><br /><br />
-
+  <br /><br>
 
   <div class="container text-center">
     <div class="row">

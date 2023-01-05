@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='../index.php'">Portal Buku.id</span>
         </div>
       </div>
     </nav>
@@ -100,6 +100,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 value="">
               <input type="checkbox" onclick="passFunction()">Tampilkan Password
             </div>
+            <?php if ($is_invalid): ?>
+              echo "
+              <script>alert('LOGIN TIDAK VALID. MOHON COBA LAGI'); history.go(-1) </script>";
+              exit;
+              <!-- <em>Login Tidak Valid</em> -->
+            <?php endif; ?>
             <!-- Save changes button-->
             <br>
             <button class="btn btn-primary" type="submit">Log In</button>
@@ -115,9 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   <!-- <h1>Login</h1> -->
 
-  <?php if ($is_invalid): ?>
-  <em>Invalid login</em>
-  <?php endif; ?>
+
 
   <!-- <form method="post">
     <label for="email">email</label>
@@ -129,14 +133,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button>Log in</button>
   </form> -->
   <script>
-  function passFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
+    function passFunction() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
     }
-  }
   </script>
 </body>
 

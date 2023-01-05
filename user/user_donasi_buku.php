@@ -52,7 +52,7 @@ if (isset($_POST['tambah_buku'])) {
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="/PortalBuku-4One/css/style_admin.css" />
   <!-- <link rel="stylesheet" href="styleAD.css" /> -->
@@ -60,7 +60,7 @@ if (isset($_POST['tambah_buku'])) {
 </head>
 
 <body>
-  <?php include "../header.php"; ?>
+<?php include '..\header_logged.php'; ?>
 
   <div class="container">
     <div class="card">
@@ -70,7 +70,8 @@ if (isset($_POST['tambah_buku'])) {
         </div>
         <div class="card-body">
           <form action="" method="post" enctype="multipart/form-data">
-            <h4>Masukkan buku yang ingin anda donasikan</h4>
+            <h4>Masukkan keterangan buku yang ingin anda donasikan</h4>
+            <h5>Mohon isikan formulir ini untuk pentingan verifikasi</h5>
             <div class="mb-auto">
               <label class="small mb-1" for="nama">Nama Buku</label><br>
               <input type="text" name="nama" class="box" placeholder="Masukkan nama buku" required>

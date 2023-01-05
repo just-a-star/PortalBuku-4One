@@ -53,12 +53,12 @@ if (isset($_SESSION["user_id"])) {
     <div class="col"></div>
     <div class="col-3">
       <div class="d-grid gap-2">
-        <button type="button" class="btn btn-primary">Sewa</button>
+        <button type="button" class="btn btn-primary" onclick="alertlogin()">Sewa</button>
       </div>
     </div>
     <div class="col-3">
       <div class="d-grid gap-2">
-        <button type="button" class="btn btn-outline-primary">
+        <button type="button" class="btn btn-outline-primary" onclick="alertlogin()">
           Terima Buku
         </button>
       </div>
@@ -82,7 +82,7 @@ if (isset($_SESSION["user_id"])) {
       </p>
       <br />
       <div class="d-grid gap-2">
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary" onclick="alertlogin()">
           Klik disini untuk Donasi Buku
         </button>
       </div>
@@ -92,32 +92,13 @@ if (isset($_SESSION["user_id"])) {
 </div>
 <br /><br /><br /><br />
 
-<!-- Keunggulan -->
-<!-- <div class="container"> -->
-<!-- <div class="row">
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-            <div class="col-1">
-            </div>
-            <div class="col fasilitas">
-                <h6><img src="gambar/shield-fill-check.svg" alt="icon-shield"> Aman Terpecaya</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos similique magnam possimus
-                    numquam provident maxime assumenda mollitia enim minima ullam quos veniam consequuntur, inventore
-                    culpa cum a odit rerum.</p>
-            </div>
-        </div> -->
-
 <div class="container overflow-hidden">
   <div class="row gx-5">
     <div class="col">
       <div class="p-3 border fasilitas">
         <h6>
           <img src="/PortalBuku-4One\resources\gambar\shield-fill-check.svg" alt="icon-shield" /> Aman
-          Terpecaya
+          Tepercaya
         </h6>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
@@ -133,10 +114,9 @@ if (isset($_SESSION["user_id"])) {
           <img src="/PortalBuku-4One\resources\gambar\clock-fill.svg" alt="icon-jam" /> Tepat Waktu
         </h6>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          dignissimos similique magnam possimus numquam provident maxime
-          assumenda mollitia enim minima ullam quos veniam consequuntur,
-          inventore culpa cum a odit rerum.
+          Tepat waktu memiliki arti tindakan mengerjakan apa yang harus dilakukan dengan tepat pada waktu yang telah
+          ditentukan sebelumnya. Sesuai dengan tujuan kami kepada Anda untuk selalu mengusahakan pelayanan dan
+          pengiriman buku yang tepat waktu.
         </p>
       </div>
     </div>
@@ -147,10 +127,9 @@ if (isset($_SESSION["user_id"])) {
           Service
         </h6>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
-          dignissimos similique magnam possimus numquam provident maxime
-          assumenda mollitia enim minima ullam quos veniam consequuntur,
-          inventore culpa cum a odit rerum.
+          Customer Services kami selalu siap dalam menangani, mengumpulkan, mengatur, merespon, mengarahkan, dan
+          melayani para pengguna terkait dengan jalannya fungsi aplikasi kami. Apabila Anda memiliki masalah dan keluhan
+          terhadap aplikasi kami, silahkan hubungi email portalbuku@gmail.com.
         </p>
       </div>
     </div>
@@ -219,6 +198,11 @@ if (isset($_SESSION["user_id"])) {
 <script src="lib/counterup/counterup.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
+<script>
+  function alertlogin() {
+    alert("Harap Login Terlebih Dahulu");
+  }
+</script>
 
 </body>
 

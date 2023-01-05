@@ -89,6 +89,11 @@ input[type="password"] {
   border-radius: 4px;
 }
 
+input[type="number"] {
+  border: 2px solid #ef9273;
+  border-radius: 4px;
+}
+
 input[type="date"] {
   border: 2px solid #ef9273;
   border-radius: 4px;

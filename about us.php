@@ -1,17 +1,3 @@
-<?php
-
-session_start();
-
-if (isset($_SESSION["user_id"])) {
-  $mysqli = require("..\PortalBuku-4One\connection\database.php");
-
-  $sql = "SELECT * FROM user
-          WHERE id = {$_SESSION["user_id"]}";
-
-  $result = $mysqli->query($sql);
-  $user = $result->fetch_assoc();
-} ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,13 +6,13 @@ if (isset($_SESSION["user_id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Landing Page</title>
-  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="/PortalBuku-4One/css/styleLP.css" />
 </head>
 
 <body>
 
-  <?php include 'header_logged.php'; ?>
+  <?php include '../PortalBuku-4One/header.php'; ?>
 
   <!-- Page Header Start -->
   <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -159,6 +145,9 @@ if (isset($_SESSION["user_id"])) {
   </div>
   <!-- Team End -->
 
+
+  <hr class="h" />
+
   <div class="container" id="peta">
     <h6>Temukan kami di/Lokasi Portal Buku</h6>
     <br />
@@ -171,7 +160,6 @@ if (isset($_SESSION["user_id"])) {
   <br /><br /><br />
 
   <?php include '../PortalBuku-4One/footer.php'; ?>
-
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

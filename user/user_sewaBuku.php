@@ -14,11 +14,11 @@ $user_id = $_SESSION['user_id'];
 $user_nama_depan = $_SESSION['nama_depan'];
 
 
-if(!isset($user_id)){
+if (!isset($user_id)) {
   header("Location: ../index.php");
 }
 
-if(isset($_POST['masukkan_keranjang'])){
+if (isset($_POST['masukkan_keranjang'])) {
   $nama_buku = $_POST['name'];
   $harga_buku = $_POST['harga_sewa'];
   $jumlah_buku = $_POST['jumlah_buku'];
@@ -26,13 +26,13 @@ if(isset($_POST['masukkan_keranjang'])){
 
   $check_cart_numbers = mysqli_query($mysqli, "SELECT * FROM `cart` WHERE user_id = '$user_id' AND nama = '$nama_buku'");
 
-  if(mysqli_num_rows($check_cart_numbers) > 0){
+  if (mysqli_num_rows($check_cart_numbers) > 0) {
     $pesan[] = "Buku sudah ada di keranjang";
 
-  }else{
+  } else {
     mysqli_query($conn, "INSERT INTO `cart`(user_id, nama, harga_sewa, kuantitas, gambar) VALUES('$user_id', '$nama_buku', '$harga_buku', '$jumlah_buku', '$gambar_buku')") or die('query failed');
     $pesan[] = 'product added to cart!';
- }
+  }
 }
 ?>
 
@@ -233,28 +233,29 @@ if(isset($_POST['masukkan_keranjang'])){
     <br>
 
     <div class="box-container">
-
-      <?php  
-         $select_products = mysqli_query($mysqli, "SELECT * FROM `buku`") or die('query failed');
-         if(mysqli_num_rows($select_products) > 0){
-            while($fetch_products = mysqli_fetch_assoc($select_products)){
-      ?>
-      <form action="" method="post" class="box">
-        <!-- Kecilin gambarnya pls -->
-        <img class="gambar gambar-1" src="../resources/gambar_upload/<?php echo $fetch_products['gambar']; ?>" alt="">
-        <div class="nama"><?php echo $fetch_products['nama']; ?></div>
-        <div class="harga_buku">$<?php echo $fetch_products['harga_sewa']; ?>/-</div>
-        <input type="number" min="1" name="jumlah_buku" value="1" class="qty">
-        <input type="hidden" name="name" value="<?php echo $fetch_products['nama']; ?>">
-        <input type="hidden" name="harga_sewa" value="<?php echo $fetch_products['harga_sewa']; ?>">
-        <input type="hidden" name="gambar" value="<?php echo $fetch_products['gambar']; ?>">
-        <input name="masukkan_keranjang" id="masukkan_keranjang" type="submit" value="add to cart">
-      </form>
-      <br>
       <?php
-         }
-      }else{
-         echo '<p class="empty">no products added yet!</p>';
+      $select_products = mysqli_query($mysqli, "SELECT * FROM `buku`") or die('query failed');
+      if (mysqli_num_rows($select_products) > 0) {
+        while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+          ?>
+          <form action="" method="post" class="box">
+            <!-- Kecilin gambarnya pls -->
+            <img class="gambar gambar-1" src="../resources/gambar_upload/<?php echo $fetch_products['gambar']; ?>" alt="">
+            <div class="nama">
+              <?php echo $fetch_products['nama']; ?>
+            </div>
+            <div class="harga_buku">$<?php echo $fetch_products['harga_sewa']; ?>/-</div>
+            <input type="number" min="1" name="jumlah_buku" value="1" class="qty">
+            <input type="hidden" name="name" value="<?php echo $fetch_products['nama']; ?>">
+            <input type="hidden" name="harga_sewa" value="<?php echo $fetch_products['harga_sewa']; ?>">
+            <input type="hidden" name="gambar" value="<?php echo $fetch_products['gambar']; ?>">
+            <input name="masukkan_keranjang" id="masukkan_keranjang" type="submit" value="add to cart">
+          </form>
+          <br>
+          <?php
+        }
+      } else {
+        echo '<p class="empty">no products added yet!</p>';
       }
       ?>
     </div>
@@ -263,7 +264,6 @@ if(isset($_POST['masukkan_keranjang'])){
       <h6>Semua buku</h6>
       <a href="/PortalBuku-4One\resources\gambar/buku.jpg" target="_blank"> <img
           src="/PortalBuku-4One\resources\gambar/buku.jpg" alt="" style="width: 10%;">
-
         <img src="/PortalBuku-4One\resources\img/buku1.jpg" alt="" style="width: 10%; height: 65px ;">
         <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
         <img src="/PortalBuku-4One\resources\img/buku2.jpg" alt="" style="width: 10%; height: 65px;">
@@ -455,7 +455,7 @@ if(isset($_POST['masukkan_keranjang'])){
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous"></script>
