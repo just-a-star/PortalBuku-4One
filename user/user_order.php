@@ -25,7 +25,7 @@ if(!isset($user_id)){
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="..\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="/PortalBuku-4One/css/style_admin.css" />
   <!-- <link rel="stylesheet" href="styleAD.css" /> -->
@@ -33,7 +33,7 @@ if(!isset($user_id)){
 </head>
 
 <body>
-  <?php include "../header.php"; ?>
+  <?php include "../header_logged.php"; ?>
 
   <div class=container>
   <div class="heading">
@@ -45,14 +45,15 @@ if(!isset($user_id)){
 
     <h1 class="title">Buku yang sedang disewa</h1>
 
-    <div class="box-container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
       <?php
          $order_query = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id = '$user_id'") or die('query failed');
          if(mysqli_num_rows($order_query) > 0){
             while($fetch_orders = mysqli_fetch_assoc($order_query)){
       ?>
-      <div class="box">
+      <div class="kartu card">
+      <div class="card-body">
         <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
         <p> name : <span><?php echo $fetch_orders['nama']; ?></span> </p>
         <p> number : <span><?php echo $fetch_orders['nomor_telepon']; ?></span> </p>
@@ -65,6 +66,8 @@ if(!isset($user_id)){
             style="color:<?php if($fetch_orders['status_pembayaran'] == 'pending'){ echo 'red'; }else{ echo 'green'; } ?>;"><?php echo $fetch_orders['status_pembayaran']; ?></span>
         </p>
       </div>
+      </div>
+                <!-- </div> -->
       <?php
        }
       }else{

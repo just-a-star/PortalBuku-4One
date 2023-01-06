@@ -39,7 +39,7 @@
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/index.php'">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/homepage.php'">Portal Buku.id</span>
         </div>
       </div>
     </nav>
@@ -71,7 +71,7 @@
               <a href="404.html" class="dropdown-item">404 Page</a>
             </div>
           </div>
-          <a href="#" onclick="alertlogin()" class="nav-item nav-link me-3">Menjadi donatur</a>
+          <a href="" onclick="alertlogin()" class="nav-item nav-link me-3">Menjadi donatur</a>
         </div>
         <div class="col-2" style="padding-right: 1%;">
           <div class="d-grid ms-auto">

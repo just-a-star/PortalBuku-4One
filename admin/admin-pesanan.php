@@ -13,6 +13,7 @@ if (!isset($admin_id)) {
 if (isset($_POST['update_order'])) {
   $update_id_pesan = $_POST['order_id'];
   $update_status_pembayaran = $_POST['status_pembayaran'];
+  
 
   mysqli_query($mysqli, "UPDATE `order` SET status_pembayaran = '$update_status_pembayaran' WHERE id = '$update_id_pesan'") or die(mysqli_error($mysqli));
 
@@ -21,7 +22,7 @@ if (isset($_POST['update_order'])) {
 if (isset($_GET['delete'])) {
   $delete_id = $_GET['delete'];
   mysqli_query($conn, "DELETE FROM `order` WHERE id = '$delete_id'") or die(mysqli_error($mysqli));
-  header('location:admin_pesanan.php');
+  header('location:admin-pesanan.php');
 }
 
 ?>

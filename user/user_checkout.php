@@ -30,8 +30,10 @@ if (isset($_POST['order_btn'])) {
   $method = mysqli_real_escape_string($conn, $_POST['method']);
   $address = mysqli_real_escape_string($conn, 'flat no. ' . $_POST['flat'] . ', ' . $_POST['street'] . ', ' . $_POST['city'] . ', ' . ' - ' . $_POST['pin_code']);
   $placed_on = date('d-M-Y');
-
+  $total_products = mysqli_real_escape_string($conn, $_POST['total_produk']);
+  // $echo alert($total_products);
   $cart_total = 0;
+  $id = 0;
   $cart_products[] = '';
 
   $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
@@ -70,28 +72,28 @@ if (isset($_POST['order_btn'])) {
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" href="/PortalBuku-4One/css/style_admin.css" />
-  <!-- <link rel="stylesheet" href="styleAD.css" /> -->
-  <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="\PortalBuku-4One\resources\bootstrap\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/PortalBuku-4One/css/style_admin.css" />
+    <!-- <link rel="stylesheet" href="styleAD.css" /> -->
+    <title>Dashboard</title>
 </head>
 
 <body>
-  <?php include '..\header_logged.php'; ?>
+    <?php include '..\header_logged.php'; ?>
 
-  <div class="container">
-    <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="width: 100%;">
-      <div class="heading">
-        <h1>Checkout</h1>
-      </div>
+    <div class="container">
+        <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded" style="width: 100%;">
+            <div class="heading">
+                <h1>Checkout</h1>
+            </div>
 
-      <section class="display-order">
-        <h2>Rincian Sewa</h2>
-        <?php
+            <section class="display-order">
+                <h2>Rincian Sewa</h2>
+                <?php
         $grand_total = 0;
         $total_kuantitas = 0;
         $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
@@ -102,97 +104,98 @@ if (isset($_POST['order_btn'])) {
             $total_kuantitas += $fetch_cart['kuantitas'];
             $id = $fetch_cart['id'];
             ?>
-            <p>
-              <?php echo $fetch_cart['nama']; ?>
-              <span><?php echo 'Rp ' . $fetch_cart['harga_sewa'] . ' Jumlah ' . $fetch_cart['kuantitas']; ?></span>
-            </p>
-            <?php
+                <p>
+                    <?php echo $fetch_cart['nama']; ?>
+                    <span><?php echo 'Rp ' . $fetch_cart['harga_sewa'] . ' Jumlah ' . $fetch_cart['kuantitas']; ?></span>
+                </p>
+                <?php
           }
         } else {
           echo '<p class="empty">Keranjangmu kosong</p>';
         }
         ?>
-        <div class="grand-total"> Harga total : <span>Rp <?php echo $grand_total; ?></span> </div>
-        <div class="grand-total"> Total kuantitas buku : <?php echo $total_kuantitas; ?></span> </div>
+                <div class="grand-total"> Harga total : <span>Rp <?php echo $grand_total; ?></span> </div>
+                <div class="grand-total"> Total kuantitas buku : <?php echo $total_kuantitas; ?></span> </div>
 
-      </section>
+            </section>
 
-      <section class="checkout">
-        <form action="" method="post">
-          <h3>Silahkan isi formulir berikut:</h3>
-          <br>
-          <div class="flex" style="text-align: justify;">
-            <div class="inputBox">
-              <span>Nama: </span>
-              <input type="text" name="name" value="<?php echo $user_nama_depan . ' ' . $user_nama_belakang?>">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Nomor telpon:</span>
-              <input type="number" name="number" value="<?php echo $no_telp?>">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Email:</span>
-              <input type="email" name="email" value="<?php echo $email?>">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Metode Pembayaran:</span>
-              <select name="method">
-                <option value="cash on delivery">cash on delivery</option>
-                <option value="credit card">credit card</option>
-                <option value="paypal">paypal</option>
-                <option value="paytm">gopay</option>
-                <option value="paytm">dana</option>
-              </select>
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Alamat:</span>
-              <input type="text" min="0" name="flat" required placeholder="e.g. nama jalan">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Detail Alamat :</span>
-              <input type="text" name="street" required placeholder="e.g. nama gedung">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Kota :</span>
-              <input type="text" name="city" required placeholder="e.g. Yogyakarta">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Provinsi :</span>
-              <input type="text" name="state" required placeholder="e.g. DIY">
-            </div>
-            <br>
-            <div class="inputBox">
-              <span>Kode Pos :</span>
-              <input type="number" min="0" name="pin_code" required placeholder="e.g. 214123">
-            </div>
-            <br>
-          </div>
-          <input hidden type="text" value=<?php echo $total_kuantitas?>>
-          <input hidden type="text" value=<?php echo $id?>>
-          <input type="submit" name="order_btn" value="Sewa Sekarang" class="btn btn-primary">
+            <section class="checkout">
+                <form action="" method="post">
+                    <h3>Silahkan isi formulir berikut:</h3>
+                    <br>
+                    <div class="flex" style="text-align: justify;">
+                        <div class="inputBox">
+                            <span>Nama: </span>
+                            <input type="text" name="name"
+                                value="<?php echo $user_nama_depan . ' ' . $user_nama_belakang?>">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Nomor telpon:</span>
+                            <input type="number" name="number" value="<?php echo $no_telp?>">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Email:</span>
+                            <input type="email" name="email" value="<?php echo $email?>">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Metode Pembayaran:</span>
+                            <select name="method">
+                                <option value="cash on delivery">cash on delivery</option>
+                                <option value="credit card">credit card</option>
+                                <option value="paypal">paypal</option>
+                                <option value="paytm">gopay</option>
+                                <option value="paytm">dana</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Alamat:</span>
+                            <input type="text" min="0" name="flat" required placeholder="e.g. nama jalan">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Detail Alamat :</span>
+                            <input type="text" name="street" required placeholder="e.g. nama gedung">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Kota :</span>
+                            <input type="text" name="city" required placeholder="e.g. Yogyakarta">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Provinsi :</span>
+                            <input type="text" name="state" required placeholder="e.g. DIY">
+                        </div>
+                        <br>
+                        <div class="inputBox">
+                            <span>Kode Pos :</span>
+                            <input type="number" min="0" name="pin_code" required placeholder="e.g. 214123">
+                        </div>
+                        <br>
+                    </div>
+                    <input hidden type="text" name="total_produk" value=<?php echo $total_kuantitas?>>
+                    <!-- <input hidden type="text" value=<?php echo $id?>> -->
+                    <input type="submit" name="order_btn" value="Sewa Sekarang" class="btn btn-primary">
+        </div>
+
+        </form>
+
+        </section>
     </div>
 
-    </form>
-
-    </section>
-  </div>
-
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
 </body>
 
