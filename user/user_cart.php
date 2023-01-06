@@ -80,7 +80,8 @@ if (isset($_GET['delete_all'])) {
               <div class="box">
                 <div class="row">
                   <div class="col-2">
-                    <img src="../resources/gambar_upload/<?php echo $fetch_cart['gambar']; ?>" alt="" width="80%">
+                    <img src="../resources/gambar_upload/<?php echo $fetch_cart['gambar']; ?>" alt="" width="80%"
+                    class="img-fluid"/>
                   </div>
                   <div class="col-4">
                     <div class="name">
@@ -88,7 +89,7 @@ if (isset($_GET['delete_all'])) {
                         <?php echo $fetch_cart['nama']; ?>
                       </h3>
                     </div>
-                    <h5>Harga:
+                    <h5>Harga sewa per hari:
                       <div class="price">Rp
                         <?php echo $fetch_cart['harga_sewa']; ?>
                       </div>
@@ -98,7 +99,7 @@ if (isset($_GET['delete_all'])) {
                     <form action="" method="post">
                       <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
                       <input type="number" min="1" name="jumlah_buku" value="<?php echo $fetch_cart['kuantitas']; ?>">
-                      <input type="submit" name="update_cart" value="update" class="option-btn">
+                      <input type="submit" name="update_cart" value="update" class="btn btn-primary option-btn">
                     </form>
                     <a href="user_cart.php?delete=<?php echo $fetch_cart['id']; ?>"
                       onclick="return confirm('delete this from cart?');">

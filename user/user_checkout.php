@@ -93,11 +93,14 @@ if (isset($_POST['order_btn'])) {
         <h2>Rincian Sewa</h2>
         <?php
         $grand_total = 0;
+        $total_kuantitas = 0;
         $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
         if (mysqli_num_rows($select_cart) > 0) {
           while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
             $total_price = ($fetch_cart['harga_sewa'] * $fetch_cart['kuantitas']);
             $grand_total += $total_price;
+            $total_kuantitas += $fetch_cart['kuantitas'];
+            $id = $fetch_cart['id'];
             ?>
             <p>
               <?php echo $fetch_cart['nama']; ?>
@@ -110,6 +113,7 @@ if (isset($_POST['order_btn'])) {
         }
         ?>
         <div class="grand-total"> Harga total : <span>Rp <?php echo $grand_total; ?></span> </div>
+        <div class="grand-total"> Total kuantitas buku : <?php echo $total_kuantitas; ?></span> </div>
 
       </section>
 
@@ -170,6 +174,8 @@ if (isset($_POST['order_btn'])) {
             </div>
             <br>
           </div>
+          <input hidden type="text" value=<?php echo $total_kuantitas?>>
+          <input hidden type="text" value=<?php echo $id?>>
           <input type="submit" name="order_btn" value="Sewa Sekarang" class="btn btn-primary">
     </div>
 

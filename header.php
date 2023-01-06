@@ -39,7 +39,7 @@
     <nav class="navbar">
       <div class="container">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1" onclick="document.location='index.php'">Portal Buku.id</span>
+          <span class="navbar-brand mb-0 h1" onclick="document.location='/PortalBuku-4One/index.php'">Portal Buku.id</span>
         </div>
       </div>
     </nav>

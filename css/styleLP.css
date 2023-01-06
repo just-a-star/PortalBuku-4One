@@ -150,7 +150,19 @@ ul.no-bullets {
 .img-account-profile {
   width: 60%;
 }
-.gambar gambar-1 {
-  width: 50%;
-  height: 50%;
+/* .gambar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+} */
+
+kartu {
+  width: 10rem;
+}
+
+/* max width 480px */
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    font-size: 150%;
+  }
 }

@@ -37,13 +37,13 @@ if(!isset($user_id)){
 
   <div class=container>
   <div class="heading">
-    <h3>your orders</h3>
+    <h3>Orderan kamu</h3>
     <p> <a href="home.php">home</a> / orders </p>
   </div>
 
   <section class="placed-orders">
 
-    <h1 class="title">placed orders</h1>
+    <h1 class="title">Buku yang sedang disewa</h1>
 
     <div class="box-container">
 

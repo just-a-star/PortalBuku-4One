@@ -55,12 +55,12 @@ if (isset($_SESSION["user_id"])) {
       <div class="col-3">
         <div class="d-grid gap-2">
           <button type="button" onclick="document.location='/PortalBuku-4One/user/user_sewaBuku.php'"
-            class="btn btn-primary">Sewa</button>
+            class="btn btn-primary btn-md">Sewa</button>
         </div>
       </div>
       <div class="col-3">
         <div class="d-grid gap-2">
-          <button type="button" class="btn btn-outline-primary">
+          <button type="button" class="btn btn-outline-primary btn-md">
             Terima Buku
           </button>
         </div>
